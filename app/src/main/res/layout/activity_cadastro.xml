@@ -33,10 +33,11 @@
             android:layout_marginBottom="475dp"
             android:background="@drawable/textbox_borda"
             android:ems="10"
+            android:fontFamily="@font/carme"
             android:gravity="center"
             android:hint="Nome Completo"
             android:inputType="text"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
 
         <EditText
             android:id="@+id/edtCPF"
@@ -50,11 +51,12 @@
             android:layout_marginBottom="400dp"
             android:background="@drawable/textbox_borda"
             android:ems="10"
+            android:fontFamily="@font/carme"
             android:gravity="center"
             android:hint="CPF"
             android:inputType="number"
             android:maxLength="11"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
 
         <EditText
             android:id="@+id/edtCargo"
@@ -68,11 +70,12 @@
             android:layout_marginBottom="325dp"
             android:background="@drawable/textbox_borda"
             android:ems="10"
+            android:fontFamily="@font/carme"
             android:gravity="center"
             android:hint="Cargo"
             android:inputType="text"
             android:maxLength="30"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
 
         <EditText
             android:id="@+id/edtLoginCad"
@@ -86,10 +89,11 @@
             android:layout_marginBottom="250dp"
             android:background="@drawable/textbox_borda"
             android:ems="10"
+            android:fontFamily="@font/carme"
             android:gravity="center"
             android:hint="Login"
             android:inputType="text"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
 
         <EditText
             android:id="@+id/edtSenhaCad"
@@ -103,10 +107,11 @@
             android:layout_marginBottom="175dp"
             android:background="@drawable/textbox_borda"
             android:ems="20"
+            android:fontFamily="@font/carme"
             android:gravity="center"
             android:hint="Senha"
             android:inputType="textPassword"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
 
         <Button
             android:id="@+id/btnCadastrar"
@@ -121,6 +126,7 @@
             android:layout_marginEnd="56dp"
             android:layout_marginBottom="84dp"
             android:backgroundTint="#1A4D2E"
+            android:fontFamily="@font/carme"
             android:text="CADASTRAR"
             android:textColor="@color/white" />
 
@@ -141,16 +147,17 @@
 
             <TextView
                 android:id="@+id/txtCadastro"
-                android:layout_width="172dp"
-                android:layout_height="43dp"
+                android:layout_width="174dp"
+                android:layout_height="34dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="89dp"
-                android:layout_marginTop="14dp"
-                android:layout_marginEnd="89dp"
-                android:layout_marginBottom="14dp"
+                android:layout_marginStart="88dp"
+                android:layout_marginTop="19dp"
+                android:layout_marginEnd="88dp"
+                android:layout_marginBottom="18dp"
+                android:fontFamily="@font/carme"
                 android:text="CADASTRO"
                 android:textAlignment="center"
                 android:textColor="#E4E4E4"

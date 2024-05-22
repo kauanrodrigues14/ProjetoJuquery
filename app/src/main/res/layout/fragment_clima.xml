@@ -7,4 +7,140 @@
     android:background="@color/corFundo">
 
 
+    <FrameLayout
+        android:id="@+id/amanhaContainer"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="550dp"
+        android:layout_marginBottom="21dp"
+        android:background="@drawable/fundo_linearlayout">
+
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/dia2Container"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginBottom="21dp"
+        android:layout_marginTop="550dp"
+        android:background="@drawable/fundo_linearlayout">
+
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/dia3Container"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginBottom="21dp"
+        android:layout_marginTop="550dp"
+        android:background="@drawable/fundo_linearlayout">
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="341dp"
+        android:layout_height="337dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="150dp"
+        android:background="@drawable/fundo_linearlayout"
+
+
+        >
+
+        <TextView
+            android:id="@+id/txtData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="136dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="137dp"
+            android:fontFamily="@font/carme"
+            android:text="22/22/10"
+            android:textColor="@color/primaryColor"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+
+            android:layout_marginStart="86dp"
+            android:layout_marginEnd="93dp"
+            android:layout_marginBottom="200dp"
+            android:fontFamily="@font/carme"
+            android:text="27°C"
+            android:textColor="@color/primaryColor"
+            android:textSize="72dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtSituacaoCli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+
+            android:layout_marginStart="128dp"
+            android:layout_marginEnd="132dp"
+            android:layout_marginBottom="181dp"
+            android:fontFamily="@font/carme"
+            android:text="Ensolarado"
+            android:textColor="@color/primaryColor"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <FrameLayout
+            android:id="@+id/umidadeContainer"
+            android:layout_width="83dp"
+            android:layout_height="93dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="21dp"
+            android:background="@drawable/fundo_frame">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/ventoContainer"
+            android:layout_width="84dp"
+            android:layout_height="92dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="26dp"
+            android:layout_marginEnd="27dp"
+            android:layout_marginBottom="22dp"
+            android:layout_toStartOf="@+id/chuvaContainer"
+            android:layout_toEndOf="@+id/umidadeContainer"
+            android:background="@drawable/fundo_frame">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/chuvaContainer"
+            android:layout_width="84dp"
+            android:layout_height="92dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="224dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginBottom="21dp"
+            android:background="@drawable/fundo_frame">
+
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+
 </FrameLayout>
