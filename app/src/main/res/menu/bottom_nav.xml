@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/Início"
+        android:title="Início"
+        android:icon="@drawable/inicio"
+
+        />
+    <item
+        android:id="@+id/sensor"
+        android:title="Sensor"
+        android:icon="@drawable/sensor_icon"
+
+        />
+    <item
+        android:id="@+id/Clima"
+        android:title="Clima"
+        android:icon="@drawable/clima"
+
+        />
+</menu>

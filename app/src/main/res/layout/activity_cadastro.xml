@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@drawable/img"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Cadastro">
+
+
+
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="700dp"
+        android:background="@drawable/quadrado_fundo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <EditText
+            android:id="@+id/edtNome"
+            android:layout_width="292dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="28.5dp"
+            android:layout_marginEnd="28.5dp"
+            android:layout_marginBottom="475dp"
+            android:background="@drawable/textbox_borda"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Nome Completo"
+            android:inputType="text"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/edtCPF"
+            android:layout_width="292dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="28.5dp"
+            android:layout_marginEnd="28.5dp"
+            android:layout_marginBottom="400dp"
+            android:background="@drawable/textbox_borda"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="CPF"
+            android:inputType="number"
+            android:maxLength="11"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/edtCargo"
+            android:layout_width="292dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="28.5dp"
+            android:layout_marginEnd="28.5dp"
+            android:layout_marginBottom="325dp"
+            android:background="@drawable/textbox_borda"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Cargo"
+            android:inputType="text"
+            android:maxLength="30"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/edtLoginCad"
+            android:layout_width="292dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="28.5dp"
+            android:layout_marginEnd="28.5dp"
+            android:layout_marginBottom="250dp"
+            android:background="@drawable/textbox_borda"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Login"
+            android:inputType="text"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/edtSenhaCad"
+            android:layout_width="292dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="28.5dp"
+            android:layout_marginEnd="28.5dp"
+            android:layout_marginBottom="175dp"
+            android:background="@drawable/textbox_borda"
+            android:ems="20"
+            android:gravity="center"
+            android:hint="Senha"
+            android:inputType="textPassword"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/btnCadastrar"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="570dp"
+            android:layout_marginEnd="56dp"
+            android:layout_marginBottom="84dp"
+            android:backgroundTint="#1A4D2E"
+            android:text="CADASTRAR"
+            android:textColor="@color/white" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="71dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="593dp"
+            android:background="@drawable/cadastro_fundo"
+            android:textAlignment="center">
+
+
+            <TextView
+                android:id="@+id/txtCadastro"
+                android:layout_width="172dp"
+                android:layout_height="43dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="89dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="89dp"
+                android:layout_marginBottom="14dp"
+                android:text="CADASTRO"
+                android:textAlignment="center"
+                android:textColor="#E4E4E4"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
