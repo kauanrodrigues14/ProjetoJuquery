@@ -51,17 +51,21 @@ class MainActivity : AppCompatActivity() {
 
             val autenticado = bd.autenticarUsuario(login, senha)
 
-            if (autenticado) {
-                Toast.makeText(this, "Login bem-sucedido!", Toast.LENGTH_SHORT).show()
-
-                // Navegue para a próxima Activity aqui
-                val intent = Intent(this, PaginaInicial::class.java)
-                startActivity(intent)
+            if (login.isEmpty() || senha.isEmpty()) {
+                Toast.makeText(this, "Login e senha não podem estar vazios.", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(this, "Falha no login. Por favor, tente novamente.", Toast.LENGTH_SHORT).show()
+                val autenticado = bd.autenticarUsuario(login, senha)
+
+                if (autenticado) {
+                    Toast.makeText(this, "Login bem-sucedido!", Toast.LENGTH_SHORT).show()
+                    // Navegue para a próxima Activity aqui
+                    val intent = Intent(this, PaginaInicial::class.java)
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(this, "Falha no login. Por favor, tente novamente.", Toast.LENGTH_SHORT).show()
+                }
             }
         }
-
         val txtCadastro = findViewById<TextView>(R.id.txtCadastro)
         txtCadastro.setOnClickListener{
             val intent = Intent(this, Cadastro::class.java)

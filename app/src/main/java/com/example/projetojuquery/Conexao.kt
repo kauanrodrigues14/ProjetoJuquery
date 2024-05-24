@@ -2,6 +2,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.widget.Toast
 
 class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE_DADOS, null, VERSAO_DO_BANCO_DE_DADOS) {
 
@@ -66,7 +67,10 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
 
         val cursor = bd.rawQuery("SELECT * FROM Bombeiro WHERE login = ? AND senha = ?", arrayOf(login, senha))
 
-        val usuarioExiste = cursor.count > 0
+
+            val usuarioExiste = cursor.count > 0
+
+
 
         cursor.close()
 
