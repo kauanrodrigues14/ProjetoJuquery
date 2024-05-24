@@ -15,7 +15,70 @@
         android:layout_marginTop="550dp"
         android:layout_marginBottom="21dp"
         android:background="@drawable/fundo_linearlayout">
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amanhã"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"
+            android:textSize="12sp"
+            android:textColor="@color/primaryColor"
+            android:fontFamily="@font/carme"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="27°"
+            android:layout_gravity="center"
+            android:layout_marginBottom="15dp"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="@color/primaryColor"
+            android:fontFamily="@font/carme"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ensolarado"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="23dp"
+            android:textSize="10dp"
+            android:textColor="@color/primaryColor"
+            android:fontFamily="@font/carme"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="27°"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="-15dp"
+            android:textSize="10dp"
+            android:textColor="@color/primaryColor"
+            android:fontFamily="@font/carme"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="|"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="50dp"
+            android:textSize="10dp"
+            android:textColor="@color/primaryColor"
+            android:fontFamily="@font/carme"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="27°"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="-15dp"
+            android:textSize="10dp"
+            android:textColor="@color/primaryColor"
+            android:fontFamily="@font/carme"
+            />
     </FrameLayout>
     <FrameLayout
         android:id="@+id/dia2Container"
@@ -25,6 +88,71 @@
         android:layout_marginBottom="21dp"
         android:layout_marginTop="550dp"
         android:background="@drawable/fundo_linearlayout">
+        <TextView
+            android:id="@+id/txtDia2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="13/07"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"
+            android:textSize="12sp"
+            android:textColor="@color/primaryColor"
+            android:fontFamily="@font/carme"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="27°"
+            android:layout_gravity="center"
+            android:layout_marginBottom="15dp"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="@color/primaryColor"
+            android:fontFamily="@font/carme"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ensolarado"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="23dp"
+            android:textSize="10dp"
+            android:textColor="@color/primaryColor"
+            android:fontFamily="@font/carme"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="27°"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="-15dp"
+            android:textSize="10dp"
+            android:textColor="@color/primaryColor"
+            android:fontFamily="@font/carme"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="|"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="50dp"
+            android:textSize="10dp"
+            android:textColor="@color/primaryColor"
+            android:fontFamily="@font/carme"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="27°"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="-15dp"
+            android:textSize="10dp"
+            android:textColor="@color/primaryColor"
+            android:fontFamily="@font/carme"
+            />
 
     </FrameLayout>
     <FrameLayout
@@ -35,6 +163,73 @@
         android:layout_marginBottom="21dp"
         android:layout_marginTop="550dp"
         android:background="@drawable/fundo_linearlayout">
+
+        <TextView
+            android:id="@+id/txtDia3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="14/07"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"
+            android:textSize="12sp"
+            android:textColor="@color/primaryColor"
+            android:fontFamily="@font/carme"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="27°"
+            android:layout_gravity="center"
+            android:layout_marginBottom="15dp"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="@color/primaryColor"
+            android:fontFamily="@font/carme"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ensolarado"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="23dp"
+            android:textSize="10dp"
+            android:textColor="@color/primaryColor"
+            android:fontFamily="@font/carme"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="27°"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="-15dp"
+            android:textSize="10dp"
+            android:textColor="@color/primaryColor"
+            android:fontFamily="@font/carme"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="|"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="50dp"
+            android:textSize="10dp"
+            android:textColor="@color/primaryColor"
+            android:fontFamily="@font/carme"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="27°"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="-15dp"
+            android:textSize="10dp"
+            android:textColor="@color/primaryColor"
+            android:fontFamily="@font/carme"
+            />
+
 
     </FrameLayout>
 
