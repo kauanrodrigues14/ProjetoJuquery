@@ -187,14 +187,172 @@
                 android:textColor="@color/primaryColor"
                 android:fontFamily="@font/carme"/>
         </FrameLayout>
+
     </RelativeLayout>
     <FrameLayout
-        android:id="@+id/frameMapa"
-        android:layout_width="360dp"
-        android:layout_height="250dp"
+        android:background="@drawable/quadrado_fundo"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
         android:layout_gravity="center"
-        android:layout_marginTop="170dp"
-        android:background="@drawable/quadrado_fundo">
+        android:layout_marginTop="90dp"
+        >
+            <TextView
+                android:id="@+id/txtData1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="30/10"
+                android:textSize="12dp"
+                android:fontFamily="@font/carme"
+                android:layout_marginLeft="-100dp"
+                android:textColor="@color/primaryColor"
+                />
+            <TextView
+                android:id="@+id/txtTempmax1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="30"
+                android:textSize="15dp"
+                android:fontFamily="@font/carme"
+                android:layout_marginLeft="-25dp"
+                android:textColor="@color/primaryColor"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="|"
+                android:textSize="20dp"
+                android:fontFamily="@font/carme"
+                android:textStyle="bold"
+                android:textColor="@color/primaryColor"
+                android:layout_marginBottom="2dp"
+                />
+            <TextView
+                android:id="@+id/txtTempmin1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="17°"
+                android:textSize="15dp"
+                android:layout_marginRight="-25dp"
+                android:fontFamily="@font/carme"
+                android:textColor="@color/primaryColor"
+
+            />
 
     </FrameLayout>
+    <FrameLayout
+        android:background="@drawable/quadrado_fundo"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="170dp"
+        >
+        <TextView
+            android:id="@+id/txtData2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="30/10"
+            android:textSize="12dp"
+            android:fontFamily="@font/carme"
+            android:layout_marginLeft="-100dp"
+            android:textColor="@color/primaryColor"
+            />
+        <TextView
+            android:id="@+id/txtTempmax2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="30"
+            android:textSize="15dp"
+            android:fontFamily="@font/carme"
+            android:layout_marginLeft="-25dp"
+            android:textColor="@color/primaryColor"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="|"
+            android:textSize="20dp"
+            android:fontFamily="@font/carme"
+            android:textStyle="bold"
+            android:textColor="@color/primaryColor"
+            android:layout_marginBottom="2dp"
+            />
+        <TextView
+            android:id="@+id/txtTempmin2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="17°"
+            android:textSize="15dp"
+            android:layout_marginRight="-25dp"
+            android:fontFamily="@font/carme"
+            android:textColor="@color/primaryColor"
+
+            />
+    </FrameLayout>
+    <FrameLayout
+        android:background="@drawable/quadrado_fundo"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="250dp"
+        >
+        <TextView
+            android:id="@+id/txtData3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="30/10"
+            android:textSize="12dp"
+            android:fontFamily="@font/carme"
+            android:layout_marginLeft="-100dp"
+            android:textColor="@color/primaryColor"
+            />
+        <TextView
+            android:id="@+id/txtTempmax3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="30"
+            android:textSize="15dp"
+            android:fontFamily="@font/carme"
+            android:layout_marginLeft="-25dp"
+            android:textColor="@color/primaryColor"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="|"
+            android:textSize="20dp"
+            android:fontFamily="@font/carme"
+            android:textStyle="bold"
+            android:textColor="@color/primaryColor"
+            android:layout_marginBottom="2dp"
+            />
+        <TextView
+            android:id="@+id/txtTempmin3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="17°"
+            android:textSize="15dp"
+            android:layout_marginRight="-25dp"
+            android:fontFamily="@font/carme"
+            android:textColor="@color/primaryColor"
+
+            />
+    </FrameLayout>
+
 </FrameLayout>
+
+

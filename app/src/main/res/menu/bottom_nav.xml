@@ -3,20 +3,21 @@
 
     <item
         android:id="@+id/Início"
-        android:title="Início"
+        android:enabled="true"
         android:icon="@drawable/inicio"
 
-        />
+        android:title="Início" />
     <item
         android:id="@+id/sensor"
-        android:title="Sensor"
+        android:enabled="true"
+
         android:icon="@drawable/sensor_icon"
 
-        />
+        android:title="Sensor" />
     <item
         android:id="@+id/Clima"
-        android:title="Clima"
+        android:enabled="true"
         android:icon="@drawable/clima"
 
-        />
+        android:title="Clima" />
 </menu>

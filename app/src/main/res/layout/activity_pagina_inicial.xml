@@ -20,14 +20,13 @@
         android:id="@+id/navView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:backgroundTint="@color/corFundo"
         app:itemIconTint="@color/primaryColor"
+        app:itemRippleColor="@color/primaryColor"
+        app:itemTextColor="@color/primaryColor"
         app:layout_constraintBottom_toBottomOf="@+id/frame_container"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:itemRippleColor="@color/primaryColor"
-        app:backgroundTint="@color/corFundo"
-        app:itemTextColor="@color/primaryColor"
-        app:menu="@menu/bottom_nav"
-        />
+        app:menu="@menu/bottom_nav" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

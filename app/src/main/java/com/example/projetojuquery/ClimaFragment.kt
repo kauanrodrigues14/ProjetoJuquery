@@ -31,7 +31,7 @@ class ClimaFragment : Fragment() {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    // Crie a interface para definir os pontos finais da API
+    // interface para definir os pontos finais da API
     private interface ClimaApi {
         @GET("weather")
         suspend fun getClima(
@@ -89,14 +89,14 @@ class ClimaFragment : Fragment() {
         lifecycleScope.launch(Dispatchers.IO) {
             try {
                 val resposta = retrofit.create(ClimaApi::class.java)
-                    .getClima("Franco da Rocha", API_KEY)
+                    .getClima("Guarulhos", API_KEY)
 
                 if (resposta.isSuccessful) {
                     val dadosClima = resposta.body()
                     val temperatura = dadosClima?.main?.temp ?: 0
                     val tempmax = dadosClima?.main?.temp_max ?:0
                     val tempmin = dadosClima?.main?.temp_min ?:0
-                    val umidade = dadosClima?.main?.humidity ?: 0
+                    val umidade = dadosClima?.main?.humidity ?: 0.0
                     val vento = dadosClima?.wind?.speed ?: 0
                     val precipitationProbability = dadosClima?.pop ?: 0.0
                     val chanceChuva = (precipitationProbability * 100).toInt()
