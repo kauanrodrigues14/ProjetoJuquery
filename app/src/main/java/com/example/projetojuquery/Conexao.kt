@@ -22,7 +22,8 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
 
         val CRIAR_TABELA_SENSOR = ("CREATE TABLE Sensor(" +
                 "idsensor INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "posição CHAR(3))")
+                "latitude CHAR(30)" +
+                "longitude CHAR (30))")
 
         val CRIAR_TABELA_ALERTA = ("CREATE TABLE Alerta(" +
                 "idalerta INTEGER PRIMARY KEY AUTOINCREMENT," +

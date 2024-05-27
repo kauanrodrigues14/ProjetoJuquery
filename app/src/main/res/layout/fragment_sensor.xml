@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,7 +7,135 @@
     tools:context=".SensorFragment"
     android:background="@color/corFundo">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="150dp">
+
+        <WebView
+            android:layout_width="350dp"
+            android:layout_height="300dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="105dp"
+            android:layout_marginRight="20dp">
+
+        </WebView>
+
+        <FrameLayout
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/fundo_linearlayout">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:background="@drawable/cadastro_fundo">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SENSORES CADASTRADOS"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/carme"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="-45dp"
+                android:background="@drawable/sensor_cad_exb">
 
 
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/sensor_cad_exb">
 
-</FrameLayout>
+
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="-95dp"
+                android:background="@drawable/sensor_cad_exb">
+
+
+            </FrameLayout>
+
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:background="@drawable/fundo_linearlayout"
+            android:layout_marginTop="40dp">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:background="@drawable/cadastro_fundo">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CADASTRO"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/carme"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="20dp"
+                    android:textStyle="bold"/>
+            </FrameLayout>
+        <EditText
+            android:id="@+id/edtLong"
+            android:layout_width="270dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="-25dp"
+            android:background="@drawable/textbox_borda"
+            android:ems="10"
+            android:fontFamily="@font/carme"
+            android:hint="Longitude"
+            android:textAlignment="center"
+            android:inputType="text"
+            android:textColor="@color/black" />
+        <EditText
+            android:id="@+id/edtLat"
+            android:layout_width="270dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/textbox_borda"
+            android:ems="10"
+            android:fontFamily="@font/carme"
+            android:hint="Latitude"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/btnCadastrar"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_marginTop="100dp"
+            android:layout_gravity="center"
+            android:backgroundTint="#1A4D2E"
+            android:fontFamily="@font/carme"
+            android:text="CADASTRAR"
+            android:textColor="@color/white" />
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>
