@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import bdConnect
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -21,6 +22,7 @@ class PaginaInicial : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_pagina_inicial)
 
+        val bdIncio = bdConnect(this)
 
         barraNavegacao = findViewById(R.id.navView)
 

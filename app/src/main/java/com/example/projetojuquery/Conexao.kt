@@ -61,8 +61,6 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
         }
         return bd.insert("Bombeiro", null, valores)
     }
-
-
     fun autenticarUsuario(login: String, senha: String): Boolean {
         val bd = this.writableDatabase
 
@@ -79,4 +77,16 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
 
 
     }
+    fun cadastrarSensor(longitude: String, latitude: String):Long{
+        val bd = this.writableDatabase
+
+        val valores = ContentValues().apply {
+
+            put("lat", latitude)
+            put("long", longitude)
+
+        }
+        return bd.insert("Sensor", null, valores)
+    }
+
 }
