@@ -13,8 +13,9 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentActivity
 
-class SensorFragment : AppCompatActivity() {
+class SensorFragment : FragmentActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -8,6 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -21,7 +25,7 @@ import java.util.Date
 import java.util.Locale
 
 
-class ClimaFragment : Fragment() {
+class ClimaFragment : FragmentActivity() {
 
     private val BASE_URL = "https://api.openweathermap.org/data/2.5/"
     private val API_KEY = "c224f8efb78a9df1bc94e936cf9069a7"
@@ -86,35 +90,32 @@ class ClimaFragment : Fragment() {
         val dt: Long
     )
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_clima, container, false)
-    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.fragment_clima)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val txtTemp = view.findViewById<TextView>(R.id.txtTemp)
-        val txtUmidade = view.findViewById<TextView>(R.id.txtUmidade)
-        val txtVento = view.findViewById<TextView>(R.id.txtVento)
-        val txtChuva = view.findViewById<TextView>(R.id.txtChuva)
-        val txtData = view.findViewById<TextView>(R.id.txtData)
-        val txtTempmax = view.findViewById<TextView>(R.id.txtTempmax)
-        val txtTempmin = view.findViewById<TextView>(R.id.txtTempmin)
+
+        val txtTemp = findViewById<TextView>(R.id.txtTemp)
+        val txtUmidade = findViewById<TextView>(R.id.txtUmidade)
+        val txtVento = findViewById<TextView>(R.id.txtVento)
+        val txtChuva = findViewById<TextView>(R.id.txtChuva)
+        val txtData = findViewById<TextView>(R.id.txtData)
+        val txtTempmax = findViewById<TextView>(R.id.txtTempmax)
+        val txtTempmin = findViewById<TextView>(R.id.txtTempmin)
 
         // Previsão dos próximos dias
-        val txtTempmin1 = view.findViewById<TextView>(R.id.txtTempmin1)
-        val txtTempmax1 = view.findViewById<TextView>(R.id.txtTempmax1)
-        val txtData1 = view.findViewById<TextView>(R.id.txtData1)
+        val txtTempmin1 = findViewById<TextView>(R.id.txtTempmin1)
+        val txtTempmax1 = findViewById<TextView>(R.id.txtTempmax1)
+        val txtData1 = findViewById<TextView>(R.id.txtData1)
 
-        val txtTempmin2 = view.findViewById<TextView>(R.id.txtTempmin2)
-        val txtTempmax2 = view.findViewById<TextView>(R.id.txtTempmax2)
-        val txtData2 = view.findViewById<TextView>(R.id.txtData2)
+        val txtTempmin2 = findViewById<TextView>(R.id.txtTempmin2)
+        val txtTempmax2 = findViewById<TextView>(R.id.txtTempmax2)
+        val txtData2 = findViewById<TextView>(R.id.txtData2)
 
-        val txtTempmin3 = view.findViewById<TextView>(R.id.txtTempmin3)
-        val txtTempmax3 = view.findViewById<TextView>(R.id.txtTempmax3)
-        val txtData3 = view.findViewById<TextView>(R.id.txtData3)
+        val txtTempmin3 =findViewById<TextView>(R.id.txtTempmin3)
+        val txtTempmax3 = findViewById<TextView>(R.id.txtTempmax3)
+        val txtData3 = findViewById<TextView>(R.id.txtData3)
 
         // Chamada API
         lifecycleScope.launch(Dispatchers.IO) {
@@ -179,10 +180,10 @@ class ClimaFragment : Fragment() {
                         txtTempmin3.text = "${previsaoTextos.getOrElse(2) { Triple("N/A", 0, 0) }.third}°C"
                     }
                 } else {
-                    mostrarErro("Falha na API: ${respostaClima.errorBody()?.string() ?: respostaPrevisao.errorBody()?.string()}")
+
                 }
             } catch (e: Exception) {
-                mostrarErro("Exceção: ${e.message}")
+
             }
         }
     }
@@ -193,9 +194,5 @@ class ClimaFragment : Fragment() {
         return sdf.format(date)
     }
 
-    private fun mostrarErro(mensagem: String) {
-        lifecycleScope.launch(Dispatchers.Main) {
-            Toast.makeText(requireContext(), mensagem, Toast.LENGTH_LONG).show()
-        }
-    }
+
 }
