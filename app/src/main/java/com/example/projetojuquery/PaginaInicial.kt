@@ -7,8 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
-import bdConnect
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -23,7 +21,6 @@ class PaginaInicial : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_pagina_inicial)
 
-        val bdIncio = bdConnect(this)
 
         barraNavegacao = findViewById(R.id.navView)
 
@@ -47,8 +44,8 @@ class PaginaInicial : AppCompatActivity() {
         substuirFragment(InicioFragment())
 
     }
-    private fun substuirFragment(fragmentActivity : FragmentActivity){
-        supportFragmentManager.beginTransaction().replace(R.id.frame_container, fragmentActivity).commit()
+    private fun substuirFragment(fragment : Fragment){
+        supportFragmentManager.beginTransaction().replace(R.id.frame_container, fragment).commit()
 
     }
 }

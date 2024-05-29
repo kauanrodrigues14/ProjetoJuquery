@@ -1,9 +1,8 @@
 package com.example.projetojuquery
 
 
+import android.content.Context
 import android.content.Intent
-import android.content.res.Configuration
-import android.graphics.Color
 import android.os.Bundle
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +12,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import bdConnect
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -49,7 +49,6 @@ class MainActivity : AppCompatActivity() {
             val senha = edtSenha.text.toString()
 
 
-            val autenticado = bd.autenticarUsuario(login, senha)
 
             if (login.isEmpty() || senha.isEmpty()) {
                 Toast.makeText(this, "Login e senha não podem estar vazios.", Toast.LENGTH_SHORT).show()
@@ -72,6 +71,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        bd.exibirDadosSensor()
     }
 }
 

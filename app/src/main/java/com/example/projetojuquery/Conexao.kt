@@ -2,12 +2,13 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.widget.Toast
+import android.util.Log
+import android.widget.EditText
 
 class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE_DADOS, null, VERSAO_DO_BANCO_DE_DADOS) {
 
     companion object {
-        private const val VERSAO_DO_BANCO_DE_DADOS = 1
+        private const val VERSAO_DO_BANCO_DE_DADOS = 2
         private const val NOME_DO_BANCO_DE_DADOS = "projetojuquery.db"
     }
 
@@ -22,7 +23,7 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
 
         val CRIAR_TABELA_SENSOR = ("CREATE TABLE Sensor(" +
                 "idsensor INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "latitude CHAR(30)" +
+                "latitude CHAR(30)," +
                 "longitude CHAR (30))")
 
         val CRIAR_TABELA_ALERTA = ("CREATE TABLE Alerta(" +
@@ -47,6 +48,7 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
         bd.execSQL("DROP TABLE IF EXISTS Sensor")
         bd.execSQL("DROP TABLE IF EXISTS Alerta")
         onCreate(bd)
+
     }
 
     fun cadastroBombeiro(nome: String, cpf:String, login:String, cargo:String, senha:String):Long{
@@ -61,6 +63,8 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
         }
         return bd.insert("Bombeiro", null, valores)
     }
+
+
     fun autenticarUsuario(login: String, senha: String): Boolean {
         val bd = this.writableDatabase
 
@@ -77,16 +81,33 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
 
 
     }
-    fun cadastrarSensor(longitude: String, latitude: String):Long{
+    fun cadastrarSensor(latitude: String, longitude: String): Long {
         val bd = this.writableDatabase
 
         val valores = ContentValues().apply {
-
-            put("lat", latitude)
-            put("long", longitude)
-
+            put("latitude", latitude)
+            put("longitude", longitude)
         }
+
         return bd.insert("Sensor", null, valores)
     }
+    fun exibirDadosSensor() {
+        val bd = this.readableDatabase
+        val cursor = bd.rawQuery("SELECT * FROM Sensor", null)
 
+        if (cursor.moveToFirst()) {
+            do {
+                val idSensor = cursor.getInt(cursor.getColumnIndexOrThrow("idsensor"))
+                val latitude = cursor.getString(cursor.getColumnIndexOrThrow("latitude"))
+                val longitude = cursor.getString(cursor.getColumnIndexOrThrow("longitude"))
+
+                // Exibe os dados no logcat
+                Log.d("Dados Sensor", "ID do Sensor: $idSensor, Latitude: $latitude, Longitude: $longitude")
+            } while (cursor.moveToNext())
+        } else {
+            Log.d("Dados Sensor", "Nenhum dado encontrado na tabela Sensor")
+        }
+
+        cursor.close()
+    }
 }
