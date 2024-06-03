@@ -13,54 +13,130 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingBottom="180dp">
 
-                <ScrollView
+                <FrameLayout
                     android:layout_width="300dp"
                     android:layout_height="300dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="120dp"
                     android:background="@drawable/fundo_linearlayout">
+
+
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="42dp"
+                            android:background="@drawable/cadastro_fundo">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/carme"
+                                android:text="ALERTAS"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+                        </FrameLayout>
+
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="45dp"
+                        android:translationZ="2dp">
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="42dp"
-                        android:background="@drawable/cadastro_fundo">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="ALERTAS"
-                            android:textColor="@color/white"
-                            android:fontFamily="@font/carme"
-                            android:layout_gravity="center"
-                            android:textAlignment="center"
-                            android:textSize="20dp"
-                            android:textStyle="bold"/>
-                    </FrameLayout>
-                    <FrameLayout
-                        android:layout_width="250dp"
-                        android:layout_height="60dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="-55dp"
-                        android:background="@drawable/sensor_cad_exb">
-
-
-                    </FrameLayout>
-                    <FrameLayout
-                        android:layout_width="250dp"
-                        android:layout_height="60dp"
-                        android:layout_gravity="center"
+                        android:layout_height="2dp"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/sensor_cad_exb">
+                        android:orientation="vertical"
+                        android:paddingBottom="200dp">
+
+                        <FrameLayout
+                            android:layout_width="250dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/sensor_cad_exb">
 
 
-                    </FrameLayout>
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="250dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/sensor_cad_exb">
+
+
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="250dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/sensor_cad_exb">
+
+
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="250dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/sensor_cad_exb">
+
+
+                        </FrameLayout>
+
 
                     </LinearLayout>
-                </ScrollView>
+                    </ScrollView>
+                </FrameLayout>
 
+
+                <FrameLayout
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="60dp"
+                    android:background="@drawable/fundo_linearlayout">
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:background="@drawable/cadastro_fundo">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/carme"
+                        android:text="NOTÍCIAS"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+                    <WebView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="70dp"
+                        android:background="@drawable/textbox_borda"/>
+                    <WebView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="180dp"
+                        android:background="@drawable/textbox_borda"/>
+
+
+                </FrameLayout>
 
             </LinearLayout>
 

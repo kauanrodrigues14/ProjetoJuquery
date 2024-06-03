@@ -110,4 +110,25 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
 
         cursor.close()
     }
+
+    fun obterDadosSensor(): List<Pair<Int, Pair<String, String>>> {
+        val bd = this.readableDatabase
+        val cursor = bd.rawQuery("SELECT * FROM Sensor LIMIT 3", null)
+
+        val dadosSensor = mutableListOf<Pair<Int, Pair<String, String>>>()
+
+        if (cursor.moveToFirst()) {
+            do {
+                val idSensor = cursor.getInt(cursor.getColumnIndexOrThrow("idsensor"))
+                val latitude = cursor.getString(cursor.getColumnIndexOrThrow("latitude"))
+                val longitude = cursor.getString(cursor.getColumnIndexOrThrow("longitude"))
+
+                dadosSensor.add(idSensor to (latitude to longitude))
+            } while (cursor.moveToNext())
+        }
+
+        cursor.close()
+
+        return dadosSensor
+    }
 }
