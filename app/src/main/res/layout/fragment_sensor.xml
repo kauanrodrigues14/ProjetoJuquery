@@ -85,31 +85,24 @@
 
                 <TextView
                     android:id="@+id/txtLatitude"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Latitude"
-                android:layout_marginLeft="-30dp"
-                android:textColor="@color/primaryColor"
-                android:textSize="13dp"
-                android:layout_gravity="center"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="|"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginBottom="2dp"
-                    android:textColor="@color/primaryColor"
-                    android:layout_gravity="center"
-                    android:textSize="25dp"/>
-                <TextView
-                    android:id="@+id/txtLongitude"
-                    android:layout_width="wrap_content"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:text="Latitude"
-                    android:layout_marginLeft="60dp"
+                    android:layout_marginLeft="37dp"
                     android:textColor="@color/primaryColor"
-                    android:textSize="13dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="15dp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/txtLongitude"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:text="Longitude"
+                    android:layout_marginLeft="37dp"
+                    android:layout_marginBottom="-10dp"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="15dp"
                     android:layout_gravity="center"/>
             </FrameLayout>
             <FrameLayout
@@ -140,31 +133,24 @@
 
                 <TextView
                     android:id="@+id/txtLatitude1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:text="Latitude"
-                    android:layout_marginLeft="-30dp"
+                    android:layout_marginLeft="37dp"
                     android:textColor="@color/primaryColor"
-                    android:textSize="13dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="15dp"
                     android:layout_gravity="center"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="|"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginBottom="2dp"
-                    android:textColor="@color/primaryColor"
-                    android:layout_gravity="center"
-                    android:textSize="25dp"/>
-                <TextView
                     android:id="@+id/txtLongitude1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:text="Longitude"
-                    android:layout_marginLeft="60dp"
+                    android:layout_marginLeft="37dp"
+                    android:layout_marginBottom="-10dp"
                     android:textColor="@color/primaryColor"
-                    android:textSize="13dp"
+                    android:textSize="15dp"
                     android:layout_gravity="center"/>
 
 
