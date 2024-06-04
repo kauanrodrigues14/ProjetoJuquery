@@ -36,10 +36,6 @@ class SensorFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_sensor, container, false)
 
 
-
-
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -136,7 +132,7 @@ class SensorFragment : Fragment() {
                     literal(0.2), rgb(103.0, 169.0, 207.0)
                 )
             )
-            // ... outras propriedades
+
         }
         style.addLayerAbove(heatmapLayer, "waterway-label")
     }
