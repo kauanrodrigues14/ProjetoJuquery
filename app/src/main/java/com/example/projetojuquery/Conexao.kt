@@ -49,6 +49,7 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
         bd.execSQL("DROP TABLE IF EXISTS Alerta")
         onCreate(bd)
 
+
     }
 
     fun cadastroBombeiro(nome: String, cpf:String, login:String, cargo:String, senha:String):Long{

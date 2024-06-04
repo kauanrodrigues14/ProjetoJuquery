@@ -118,23 +118,52 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:fontFamily="@font/carme"
-                        android:text="NOTÍCIAS"
+                        android:text="ADMINISTRADOR"
                         android:textAlignment="center"
                         android:textColor="@color/white"
                         android:textSize="20dp"
                         android:textStyle="bold" />
                 </FrameLayout>
-                    <WebView
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_marginTop="70dp"
-                        android:background="@drawable/textbox_borda"/>
-                    <WebView
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_marginTop="180dp"
-                        android:background="@drawable/textbox_borda"/>
+                    <EditText
+                        android:id="@+id/edtLoginAdm"
+                        android:layout_width="270dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="-25dp"
+                        android:background="@drawable/textbox_borda"
+                        android:ems="10"
+                        android:fontFamily="@font/carme"
+                        android:hint="Login"
+                        android:textAlignment="center"
+                        android:inputType="text"
+                        android:digits="23,23231455566"
 
+                        android:textColor="@color/black" />
+
+                    <EditText
+                        android:id="@+id/edtSenhaAdm"
+                        android:layout_width="270dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="25dp"
+                        android:background="@drawable/textbox_borda"
+                        android:ems="10"
+                        android:fontFamily="@font/carme"
+                        android:hint="Senha"
+                        android:inputType="text"
+                        android:textAlignment="center"
+                        android:textColor="@color/black" />
+
+                    <Button
+                        android:id="@+id/btnLoginAdm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="46dp"
+                        android:layout_marginTop="100dp"
+                        android:layout_gravity="center"
+                        android:backgroundTint="#1A4D2E"
+                        android:fontFamily="@font/carme"
+                        android:text="LOGIN"
+                        android:textColor="@color/white" />
 
                 </FrameLayout>
 
