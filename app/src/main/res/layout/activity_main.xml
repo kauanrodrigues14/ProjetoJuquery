@@ -15,7 +15,7 @@
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
-        android:layout_width="375dp"
+        android:layout_width="350dp"
         android:layout_height="570dp"
         android:layout_centerInParent="true"
         android:background="@drawable/quadrado_fundo"
@@ -28,13 +28,13 @@
 
         <EditText
             android:id="@+id/editText"
-            android:layout_width="292dp"
-            android:layout_height="40dp"
+            android:layout_width="202dp"
+            android:layout_height="45dp"
             android:layout_above="@+id/edtSenha"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="31dp"
-            android:layout_marginEnd="32dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
             android:layout_marginBottom="19dp"
             android:background="@drawable/textbox_borda"
             android:backgroundTintMode="src_in"
@@ -45,12 +45,12 @@
 
         <EditText
             android:id="@+id/edtSenha"
-            android:layout_width="292dp"
-            android:layout_height="40dp"
+            android:layout_width="290dp"
+            android:layout_height="45dp"
             android:layout_above="@+id/btnLogar"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="28dp"
+            android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="33dp"
             android:background="@drawable/textbox_borda"
@@ -68,7 +68,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="54dp"
-            android:layout_marginEnd="51dp"
+            android:layout_marginEnd="54dp"
             android:layout_marginBottom="11dp"
             android:text="@string/strCadastro"
             android:textAlignment="center"
@@ -101,10 +101,10 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="75dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="74dp"
-            android:layout_marginBottom="36dp"
+            android:layout_marginStart="73dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="76dp"
+            android:layout_marginBottom="21dp"
             app:srcCompat="@drawable/logo" />
 
     </RelativeLayout>

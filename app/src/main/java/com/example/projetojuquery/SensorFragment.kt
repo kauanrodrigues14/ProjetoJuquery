@@ -10,24 +10,10 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import bdConnect
-import com.mapbox.maps.MapView
-import com.mapbox.maps.Style
-import com.mapbox.maps.extension.style.expressions.generated.Expression
-import com.mapbox.maps.extension.style.expressions.generated.Expression.Companion.interpolate
-import com.mapbox.maps.extension.style.expressions.generated.Expression.Companion.linear
-import com.mapbox.maps.extension.style.expressions.generated.Expression.Companion.literal
-import com.mapbox.maps.extension.style.expressions.generated.Expression.Companion.rgb
-import com.mapbox.maps.extension.style.expressions.generated.Expression.Companion.rgba
-import com.mapbox.maps.extension.style.layers.addLayerAbove
-import com.mapbox.maps.extension.style.layers.generated.heatmapLayer
-import com.mapbox.maps.extension.style.sources.addSource
-import com.mapbox.maps.extension.style.sources.generated.geoJsonSource
 
 
 class SensorFragment : Fragment() {
-
-
-        private lateinit var mapView: MapView
+    
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -46,12 +32,6 @@ class SensorFragment : Fragment() {
         val btnCadastrar = view.findViewById<Button>(R.id.btnCadastrarSensor)
 
 
-        // Configuração do Mapbox
-        mapView = view.findViewById(R.id.mapView)
-
-        mapView.getMapboxMap().loadStyleUri(Style.DARK) { style ->
-            adicionarCamadaMapaCalor(style)
-        }
 
 
         btnCadastrar.setOnClickListener {
@@ -115,26 +95,6 @@ class SensorFragment : Fragment() {
 
 
 
-    }
-    private fun adicionarCamadaMapaCalor(style: Style) {
-        // Criação da fonte de dados do heatmap (substitua pelo seu GeoJSON)
-        val heatmapSource = geoJsonSource("fonte-mapa-calor") {
-            url("URL_DO_SEU_GEOJSON")
-        }
-        style.addSource(heatmapSource)
-
-        // Criação da camada de heatmap
-        val heatmapLayer = heatmapLayer("camada-mapa-calor", "fonte-mapa-calor") {
-            heatmapColor(
-                interpolate(
-                    linear(), Expression.heatmapDensity(),
-                    literal(0.0), rgba(33.0, 102.0, 172.0, 0.0),
-                    literal(0.2), rgb(103.0, 169.0, 207.0)
-                )
-            )
-
-        }
-        style.addLayerAbove(heatmapLayer, "waterway-label")
     }
 
 

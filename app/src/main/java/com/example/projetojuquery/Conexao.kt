@@ -1,9 +1,9 @@
+
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
-import android.widget.EditText
 
 class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE_DADOS, null, VERSAO_DO_BANCO_DE_DADOS) {
 
@@ -131,5 +131,15 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
         cursor.close()
 
         return dadosSensor
+    }
+    fun atualizarBombeiro(idBombeiro: Int, novoNome: String, novoCargo: String): Boolean {
+        val db = this.writableDatabase
+        val contentValues = ContentValues()
+        contentValues.put("nome", novoNome)
+        contentValues.put("cargo", novoCargo)
+
+        val rowsAffected = db.update("Bombeiro", contentValues, "idbombeiro = ?", arrayOf(idBombeiro.toString()))
+        db.close()
+        return rowsAffected > 0
     }
 }
