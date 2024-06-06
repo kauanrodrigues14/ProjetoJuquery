@@ -39,7 +39,8 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
         bd.execSQL(CRIAR_TABELA_SENSOR)
         bd.execSQL(CRIAR_TABELA_ALERTA)
 
-        val INSERIR_BOMBEIRO = ("INSERT INTO Bombeiro VALUES(\"1\",\"kauan\",\"21312312312\",\"kauan\",\"kauan\",\"kauan\")")
+        val INSERIR_BOMBEIRO =
+            ("INSERT INTO Bombeiro VALUES(\"1\",\"kauan\",\"21312312312\",\"kauan\",\"kauan\",\"kauan\")")
         bd.execSQL(INSERIR_BOMBEIRO)
     }
 
@@ -52,10 +53,16 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
 
     }
 
-    fun cadastroBombeiro(nome: String, cpf:String, login:String, cargo:String, senha:String):Long{
+    fun cadastroBombeiro(
+        nome: String,
+        cpf: String,
+        login: String,
+        cargo: String,
+        senha: String
+    ): Long {
         val bd = this.writableDatabase
 
-        val valores = ContentValues().apply{
+        val valores = ContentValues().apply {
             put("nome", nome)
             put("cpf", cpf)
             put("login", login)
@@ -69,10 +76,13 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
     fun autenticarUsuario(login: String, senha: String): Boolean {
         val bd = this.writableDatabase
 
-        val cursor = bd.rawQuery("SELECT * FROM Bombeiro WHERE login = ? AND senha = ?", arrayOf(login, senha))
+        val cursor = bd.rawQuery(
+            "SELECT * FROM Bombeiro WHERE login = ? AND senha = ?",
+            arrayOf(login, senha)
+        )
 
 
-            val usuarioExiste = cursor.count > 0
+        val usuarioExiste = cursor.count > 0
 
 
 
@@ -82,6 +92,7 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
 
 
     }
+
     fun cadastrarSensor(latitude: String, longitude: String): Long {
         val bd = this.writableDatabase
 
@@ -92,6 +103,7 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
 
         return bd.insert("Sensor", null, valores)
     }
+
     fun exibirDadosSensor() {
         val bd = this.readableDatabase
         val cursor = bd.rawQuery("SELECT * FROM Sensor", null)
@@ -103,7 +115,10 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
                 val longitude = cursor.getString(cursor.getColumnIndexOrThrow("longitude"))
 
                 // Exibe os dados no logcat
-                Log.d("Dados Sensor", "ID do Sensor: $idSensor, Latitude: $latitude, Longitude: $longitude")
+                Log.d(
+                    "Dados Sensor",
+                    "ID do Sensor: $idSensor, Latitude: $latitude, Longitude: $longitude"
+                )
             } while (cursor.moveToNext())
         } else {
             Log.d("Dados Sensor", "Nenhum dado encontrado na tabela Sensor")
@@ -132,14 +147,41 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
 
         return dadosSensor
     }
+
     fun atualizarBombeiro(idBombeiro: Int, novoNome: String, novoCargo: String): Boolean {
         val db = this.writableDatabase
         val contentValues = ContentValues()
         contentValues.put("nome", novoNome)
         contentValues.put("cargo", novoCargo)
 
-        val rowsAffected = db.update("Bombeiro", contentValues, "idbombeiro = ?", arrayOf(idBombeiro.toString()))
+        val rowsAffected =
+            db.update("Bombeiro", contentValues, "idbombeiro = ?", arrayOf(idBombeiro.toString()))
         db.close()
         return rowsAffected > 0
+    }
+
+    fun getBombeiroIdFromDatabase(): Int? {
+        val db = this.readableDatabase
+
+        val projection = arrayOf("idbombeiro")
+        val sortOrder = "idbombeiro DESC"
+        val cursor = db.query(
+            "Bombeiro",   // The table to query
+            projection,            // The array of columns to return (pass null to get all)
+            null,          // The columns for the WHERE clause
+            null,       // The values for the WHERE clause
+            null,          // don't group the rows
+            null,           // don't filter by row groups
+            sortOrder       // The sort order
+        )
+
+        return cursor.use {
+            if (it.moveToFirst()) {
+                val idBombeiro = it.getInt(it.getColumnIndexOrThrow("idbombeiro"))
+                idBombeiro
+            } else {
+                null
+            }
+        }
     }
 }
