@@ -36,7 +36,7 @@ class InicioFragment : Fragment() {
 
             if (login == "admin" && senha == "adm") {
                 Toast.makeText(contexto, "Login bem-sucedido!", Toast.LENGTH_SHORT).show()
-                val intent = Intent(contexto, CRUD::class.java)
+                val intent = Intent(contexto, DadosBombeiro::class.java)
                 startActivity(intent)
             } else {
                 Toast.makeText(contexto, "Credenciais inválidas.", Toast.LENGTH_SHORT).show()

@@ -35,23 +35,7 @@ class CRUD : AppCompatActivity() {
         val edtAttCargo = dialog.findViewById<EditText>(R.id.edtAttCargo)
         val botaoAtualizar = dialog.findViewById<Button>(R.id.btnAtualizar)
 
-        botaoAtualizar.setOnClickListener {
-            val novoNome = edtAttNome.text.toString()
-            val novoCargo = edtAttCargo.text.toString()
 
-            val idBombeiro = bd.getBombeiroIdFromDatabase()
-            if (idBombeiro != null) {
-                val atualizado = bd.atualizarBombeiro(idBombeiro, novoNome, novoCargo)
-                if (atualizado) {
-                    mostrarDialogoSucesso()
-                } else {
-                    mostrarDialogoErro()
-                }
-                dialog.dismiss()
-            } else {
-                mostrarDialogoErro()
-            }
-        }
 
         // Configurar o layout do Dialog
         dialog.window?.setBackgroundDrawableResource(R.drawable.fundo_dialog)

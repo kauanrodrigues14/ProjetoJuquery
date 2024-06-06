@@ -18,6 +18,9 @@
         android:theme="@style/Theme.ProjetoJuquery"
         tools:targetApi="31">
         <activity
+            android:name=".DadosBombeiro"
+            android:exported="false" />
+        <activity
             android:name=".CRUD"
             android:exported="false" />
         <activity
