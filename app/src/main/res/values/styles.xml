@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Outros estilos existentes -->
+
+    <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:windowBackground">@drawable/fundo_dialog</item>
+        <item name="android:textColorPrimary">@color/primaryColor</item> <!-- Cor do texto -->
+    </style>
+</resources>

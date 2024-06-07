@@ -77,6 +77,7 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
                     cpf = cursor.getString(cursor.getColumnIndexOrThrow("cpf")),
                     login = cursor.getString(cursor.getColumnIndexOrThrow("login")),
                     cargo = cursor.getString(cursor.getColumnIndexOrThrow("cargo")),
+
                 )
                 bombeiros.add(bombeiro)
             } while (cursor.moveToNext())
@@ -95,6 +96,12 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
 
         return bd.update("Bombeiro", valores, "idbombeiro = ?", arrayOf(id.toString()))
     }
+    fun deletarBombeiro(id: Int):Int{
+
+        val bd = this.writableDatabase
+        return bd.delete("Bombeiro", "idbombeiro= ?", arrayOf(id.toString()))
+    }
+
     data class Bombeiro(val id: Int, var nome: String, val cpf: String, val login: String, var cargo: String)
 
 

@@ -16,9 +16,9 @@ class DadosBombeiro : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val bd = bdConnect(this)
-        val bombeiros = bd.pegarDadosBombeiro()
+        val bombeiros = bd.pegarDadosBombeiro().toMutableList()
 
-        val adapter = BombeiroAdapter(bombeiros)
+        val adapter = BombeiroAdapter(this, bombeiros, bd)
         recyclerView.adapter = adapter
     }
 }

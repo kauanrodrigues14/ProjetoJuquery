@@ -33,7 +33,7 @@ class CRUD : AppCompatActivity() {
 
         val edtAttNome = dialog.findViewById<EditText>(R.id.edtAttNome)
         val edtAttCargo = dialog.findViewById<EditText>(R.id.edtAttCargo)
-        val botaoAtualizar = dialog.findViewById<Button>(R.id.btnAtualizar)
+
 
 
 

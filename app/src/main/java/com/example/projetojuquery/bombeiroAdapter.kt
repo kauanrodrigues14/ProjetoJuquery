@@ -6,6 +6,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
@@ -13,7 +14,11 @@ import androidx.recyclerview.widget.RecyclerView
 import bdConnect
 
 
-class BombeiroAdapter(private val bd:bdConnect ,private val context: Context, private val bombeiros: List<bdConnect.Bombeiro>) : RecyclerView.Adapter<BombeiroAdapter.BombeiroViewHolder>() {
+class BombeiroAdapter(
+    private val context: Context,
+    private val bombeiros: MutableList<bdConnect.Bombeiro>,
+    private val bd: bdConnect
+) : RecyclerView.Adapter<BombeiroAdapter.BombeiroViewHolder>() {
 
 
     class BombeiroViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -22,6 +27,7 @@ class BombeiroAdapter(private val bd:bdConnect ,private val context: Context, pr
         val login: TextView = itemView.findViewById(R.id.txtLogin)
         val cargo: TextView = itemView.findViewById(R.id.txtCargo)
         val btnEditar: ImageButton = itemView.findViewById(R.id.btnEditar)
+        val btnDeletar: ImageButton = itemView.findViewById(R.id.btnDeletar)
 
 
     }
@@ -38,33 +44,63 @@ class BombeiroAdapter(private val bd:bdConnect ,private val context: Context, pr
         holder.login.text = "Login: " + currentBombeiro.login
         holder.cargo.text = "Cargo: " + currentBombeiro.cargo
 
+
+
         holder.btnEditar.setOnClickListener {
             // Abrir diálogo para atualizar dados
 
             val dialogView = LayoutInflater.from(context).inflate(R.layout.dialog, null)
             val edtNome = dialogView.findViewById<EditText>(R.id.edtAttNome)
+            val btnAtualizar = dialogView.findViewById<Button>(R.id.btnAtualizar)
             val edtCargo = dialogView.findViewById<EditText>(R.id.edtAttCargo)
 
             edtNome.setText(currentBombeiro.nome)
             edtCargo.setText(currentBombeiro.cargo)
 
-            AlertDialog.Builder(context)
+            val alertDialog = AlertDialog.Builder(context, R.style.CustomAlertDialog)
                 .setView(dialogView)
-                .setTitle("Atualizar Bombeiro")
-                .setPositiveButton("Atualizar") { dialog, _ ->
-                    val novoNome = edtNome.text.toString()
-                    val novoCargo = edtCargo.text.toString()
+                .create()
+                alertDialog.window?.setLayout(900, 900)
 
-                    if (novoNome.isNotEmpty() && novoCargo.isNotEmpty()) {
-                        bd.atualizarBombeiro(currentBombeiro.id, novoNome, novoCargo)
-                        currentBombeiro.nome = novoNome
-                        currentBombeiro.cargo = novoCargo
-                        notifyItemChanged(position)
-                    }
+
+
+            btnAtualizar.setOnClickListener {
+                val novoNome = edtNome.text.toString()
+                val novoCargo = edtCargo.text.toString()
+
+                if (novoNome.isNotEmpty() && novoCargo.isNotEmpty()) {
+                    bd.atualizarBombeiro(currentBombeiro.id, novoNome, novoCargo)
+                    currentBombeiro.nome = novoNome
+                    currentBombeiro.cargo = novoCargo
+                    notifyItemChanged(position)
+                }
+                alertDialog.dismiss()
+            }
+            alertDialog.show()
+
+
+        }
+        holder.btnDeletar.setOnClickListener {
+
+
+            val dialog = AlertDialog.Builder(context)
+                .setTitle("Deletar")
+                .setMessage("tem certeza que deseja deletar ")
+                .setPositiveButton("Deletar"){dialog, _ ->
+                    bd.deletarBombeiro(currentBombeiro.id)
+                    bombeiros.removeAt(position)
+                    notifyItemRemoved(position)
+                    notifyItemRangeChanged(position, itemCount)
+
+                    dialog.dismiss()
+                }
+                .setNegativeButton("Cancelar"){dialog, _ ->
                     dialog.dismiss()
                 }
                 .create()
-                .show()
+            dialog.show()
+
+
         }
     }
 
