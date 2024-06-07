@@ -86,6 +86,7 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
 
         return bombeiros
     }
+
     fun atualizarBombeiro(id: Int, nome: String, cargo: String): Int {
         val bd = this.writableDatabase
 
@@ -136,28 +137,45 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
 
         return bd.insert("Sensor", null, valores)
     }
+    fun atualizarSensor(id: Int, latitude: String, longitude: String): Int {
+        val bd = this.writableDatabase
 
+        val valores = ContentValues().apply {
+            put("latitude", latitude)
+            put("longitude", longitude)
+        }
+        return bd.update("Sensor", valores, "idsensor=?", arrayOf(id.toString()))
+    }
 
-    fun obterDadosSensor(): List<Pair<Int, Pair<String, String>>> {
+    fun deletarSensor(id: Int): Int {
+        val bd = this.writableDatabase
+        return bd.delete("Sensor", "idsensor=?", arrayOf(id.toString()))
+    }
+
+    fun obterSensores(): List<Sensor> {
         val bd = this.readableDatabase
-        val cursor = bd.rawQuery("SELECT * FROM Sensor LIMIT 3", null)
-
-        val dadosSensor = mutableListOf<Pair<Int, Pair<String, String>>>()
+        val cursor = bd.rawQuery("SELECT * FROM Sensor", null)
+        val sensores = mutableListOf<Sensor>()
 
         if (cursor.moveToFirst()) {
             do {
-                val idSensor = cursor.getInt(cursor.getColumnIndexOrThrow("idsensor"))
+                val id = cursor.getInt(cursor.getColumnIndexOrThrow("idsensor"))
                 val latitude = cursor.getString(cursor.getColumnIndexOrThrow("latitude"))
                 val longitude = cursor.getString(cursor.getColumnIndexOrThrow("longitude"))
-
-                dadosSensor.add(idSensor to (latitude to longitude))
+                sensores.add(Sensor(id, latitude, longitude))
             } while (cursor.moveToNext())
         }
-
         cursor.close()
-
-        return dadosSensor
+        return sensores
     }
+    data class Sensor(
+        val id: Int,
+        var latitude: String,
+        var longitude: String
+    )
+
+
+
 
 
 

@@ -52,46 +52,17 @@ class SensorFragment : Fragment() {
             }
         }
 
-        val txtIdSensor = view.findViewById<TextView>(R.id.txtIdSensor)
+        val txtIdSensor0 = view.findViewById<TextView>(R.id.txtIdSensor)
         val txtIdSensor1 = view.findViewById<TextView>(R.id.txtIdSensor1)
         val txtIdSensor2 = view.findViewById<TextView>(R.id.txtIdSensor2)
-        val txtLatitude = view.findViewById<TextView>(R.id.txtLatitude)
+        val txtLatitude0 = view.findViewById<TextView>(R.id.txtLatitude)
         val txtLatitude1 = view.findViewById<TextView>(R.id.txtLatitude1)
         val txtLatitude2 = view.findViewById<TextView>(R.id.txtLatitude2)
-        val txtLongitude = view.findViewById<TextView>(R.id.txtLongitude)
+        val txtLongitude0 = view.findViewById<TextView>(R.id.txtLongitude)
         val txtLongitude1 = view.findViewById<TextView>(R.id.txtLongitude1)
         val txtLongitude2 = view.findViewById<TextView>(R.id.txtLongitude2)
 
-        val dadosSensor = bdSensor.obterDadosSensor()
 
-        if(dadosSensor.size >= 3){
-            txtIdSensor.text = dadosSensor[0].first.toString()
-            txtIdSensor1.text = dadosSensor[1].first.toString()
-            txtIdSensor2.text = dadosSensor[2].first.toString()
-
-            //Latitude
-            txtLatitude.text = dadosSensor[0].second.first
-            txtLatitude1.text = dadosSensor[1].second.first
-            txtLatitude2.text = dadosSensor[2].second.first
-
-            //Longitude
-
-            txtLongitude.text = dadosSensor[0].second.second
-            txtLongitude1.text = dadosSensor[1].second.second
-            txtLongitude2.text = dadosSensor[2].second.second
-
-
-        }else{
-            txtIdSensor.text = "Não há dados suficientes"
-            txtIdSensor1.text = ""
-            txtIdSensor2.text = ""
-            txtLatitude.text = ""
-            txtLatitude1.text = ""
-            txtLatitude2.text = ""
-            txtLongitude.text = ""
-            txtLongitude1.text = ""
-            txtLongitude2.text = ""
-        }
 
 
 

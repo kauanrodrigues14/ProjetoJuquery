@@ -60,7 +60,6 @@ class BombeiroAdapter(
             val alertDialog = AlertDialog.Builder(context, R.style.CustomAlertDialog)
                 .setView(dialogView)
                 .create()
-                alertDialog.window?.setLayout(900, 900)
 
 
 
@@ -77,28 +76,38 @@ class BombeiroAdapter(
                 alertDialog.dismiss()
             }
             alertDialog.show()
+            alertDialog.window?.setLayout(900, 900)
+
 
 
         }
         holder.btnDeletar.setOnClickListener {
 
+            val dialog = LayoutInflater.from(context).inflate(R.layout.dialog_delete, null)
+            val btnCancelar = dialog.findViewById<ImageButton>(R.id.btnCancelar)
+            val btnConfirmar = dialog.findViewById<ImageButton>(R.id.btnConfirmar)
 
-            val dialog = AlertDialog.Builder(context)
-                .setTitle("Deletar")
-                .setMessage("tem certeza que deseja deletar ")
-                .setPositiveButton("Deletar"){dialog, _ ->
-                    bd.deletarBombeiro(currentBombeiro.id)
-                    bombeiros.removeAt(position)
-                    notifyItemRemoved(position)
-                    notifyItemRangeChanged(position, itemCount)
-
-                    dialog.dismiss()
-                }
-                .setNegativeButton("Cancelar"){dialog, _ ->
-                    dialog.dismiss()
-                }
+            val dialogAlerta = AlertDialog.Builder(context, R.style.CustomAlertDialog)
+                .setView(dialog)
                 .create()
-            dialog.show()
+
+            btnConfirmar.setOnClickListener{
+                bd.deletarBombeiro(currentBombeiro.id)
+                bombeiros.removeAt(position)
+                notifyItemRemoved(position)
+                notifyItemRangeChanged(position, itemCount)
+
+                dialogAlerta.dismiss()
+            }
+
+            btnCancelar.setOnClickListener{
+                dialogAlerta.dismiss()
+            }
+            dialogAlerta.show()
+            dialogAlerta.window?.setLayout(600, 600)
+
+
+
 
 
         }

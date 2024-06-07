@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="300dp"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Atualizar Sensor"
+        android:textStyle="bold"
+        android:textColor="@color/primaryColor"
+        android:fontFamily="@font/carme"
+        android:textSize="25dp"
+        android:layout_gravity="center"
+        />
+
+    <EditText
+        android:id="@+id/edtLatitudeAtualizar"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:hint="Latitude"
+        android:background="@drawable/textbox_borda"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/primaryColor"
+        android:textAlignment="center"/>
+
+    <EditText
+        android:id="@+id/edtLongitudeAtualizar"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:hint="Longitude"
+        android:background="@drawable/textbox_borda"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/primaryColor"
+        android:textAlignment="center"/>
+
+    <Button
+        android:id="@+id/btnAtualizar"
+
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/primaryColor"
+        android:text="ATUALIZAR"
+        android:layout_marginTop="35dp"/>
+
+</LinearLayout>

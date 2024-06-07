@@ -7,8 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import bdConnect
 
-class DadosBombeiro : AppCompatActivity() {
-
+class DadosSensor : AppCompatActivity() {
 
     private lateinit var sensorAdapter: SensorAdapter
     private lateinit var sensorList: MutableList<bdConnect.Sensor>
@@ -27,5 +26,4 @@ class DadosBombeiro : AppCompatActivity() {
         sensorAdapter = SensorAdapter(this, sensorList, dbHelper)
         recyclerView.adapter = sensorAdapter
     }
-
 }
