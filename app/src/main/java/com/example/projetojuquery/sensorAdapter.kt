@@ -7,7 +7,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projetojuquery.R
 
@@ -77,7 +76,7 @@ class SensorAdapter(
                 .create()
 
             btnConfirmar.setOnClickListener {
-                bd.deletarBombeiro(currentSensor.id)
+                bd.deletarSensor(currentSensor.id)
                 sensores.removeAt(position)
                 notifyItemRemoved(position)
                 notifyItemRangeChanged(position, itemCount)

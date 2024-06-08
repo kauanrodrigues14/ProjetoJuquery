@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,28 +26,27 @@ class SensorFragment : Fragment() {
 
     }
     private lateinit var recyclerView: RecyclerView
-    private lateinit var sensorAdapter: SensorViewAdapter
-    private lateinit var sensores: MutableList<bdConnect.Sensor>
-    private lateinit var bdSensor: bdConnect
+    private lateinit var sensorViewAdapter: SensorViewAdapter
+    private lateinit var sensorList: List<bdConnect.Sensor>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
 
         val contexto = requireContext()
         val bdSensor = bdConnect(contexto)
         val btnCadastrar = view.findViewById<Button>(R.id.btnCadastrarSensor)
 
 
-
-        // Initialize RecyclerView
         recyclerView = view.findViewById(R.id.recyclerViewSensores)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.layoutManager = LinearLayoutManager(context)
 
-        // Initialize data
-        sensores = bdSensor.listarSensores().toMutableList()
+        val bdHelper = bdConnect(requireContext())
+        sensorList = bdHelper.obterSensores()
 
-        // Initialize adapter
-        sensorAdapter = SensorViewAdapter(requireContext(), sensores)
-        recyclerView.adapter = sensorAdapter
+        sensorViewAdapter = SensorViewAdapter(sensorList)
+        recyclerView.adapter = sensorViewAdapter
+
 
 
         btnCadastrar.setOnClickListener {
