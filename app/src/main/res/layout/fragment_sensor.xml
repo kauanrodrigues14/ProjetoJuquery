@@ -56,157 +56,19 @@
                         android:textSize="20dp"
                         android:textStyle="bold"/>
             </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="250dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="-45dp"
-                android:background="@drawable/sensor_cad_exb">
-
-                    <TextView
-                        android:id="@+id/txtIdSensor"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="ID"
-                        android:layout_marginLeft="-90dp"
-                        android:textColor="@color/primaryColor"
-                        android:textSize="15dp"
-                        android:layout_gravity="center"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="|"
-                    android:layout_marginLeft="-70dp"
-                    android:layout_marginBottom="2dp"
-                    android:textColor="@color/primaryColor"
-                    android:layout_gravity="center"
-                    android:textSize="25dp"/>
-
-                <TextView
-                    android:id="@+id/txtLatitude"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:text="Latitude"
-                    android:layout_marginLeft="37dp"
-                    android:textColor="@color/primaryColor"
-                    android:layout_marginBottom="10dp"
-                    android:textSize="15dp"
-                    android:layout_gravity="center"/>
-
-                <TextView
-                    android:id="@+id/txtLongitude"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:text="Longitude"
-                    android:layout_marginLeft="37dp"
-                    android:layout_marginBottom="-10dp"
-                    android:textColor="@color/primaryColor"
-                    android:textSize="15dp"
-                    android:layout_gravity="center"/>
-            </FrameLayout>
-            <FrameLayout
-                android:layout_width="250dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="25dp"
-                android:background="@drawable/sensor_cad_exb">
-
-                <TextView
-                    android:id="@+id/txtIdSensor1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ID"
-                    android:layout_marginLeft="-90dp"
-                    android:textColor="@color/primaryColor"
-                    android:textSize="15dp"
-                    android:layout_gravity="center"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="|"
-                    android:layout_marginLeft="-70dp"
-                    android:layout_marginBottom="2dp"
-                    android:textColor="@color/primaryColor"
-                    android:layout_gravity="center"
-                    android:textSize="25dp"/>
-
-                <TextView
-                    android:id="@+id/txtLatitude1"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:text="Latitude"
-                    android:layout_marginLeft="37dp"
-                    android:textColor="@color/primaryColor"
-                    android:layout_marginBottom="10dp"
-                    android:textSize="15dp"
-                    android:layout_gravity="center"/>
-
-                <TextView
-                    android:id="@+id/txtLongitude1"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:text="Longitude"
-                    android:layout_marginLeft="37dp"
-                    android:layout_marginBottom="-10dp"
-                    android:textColor="@color/primaryColor"
-                    android:textSize="15dp"
-                    android:layout_gravity="center"/>
-
-
-            </FrameLayout>
-            <FrameLayout
-                android:layout_width="250dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="-95dp"
-                android:background="@drawable/sensor_cad_exb">
-
-                <TextView
-                    android:id="@+id/txtIdSensor2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ID"
-                    android:layout_marginLeft="-90dp"
-                    android:textColor="@color/primaryColor"
-                    android:textSize="15dp"
-                    android:layout_gravity="center"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="|"
-                    android:layout_marginLeft="-70dp"
-                    android:layout_marginBottom="2dp"
-                    android:textColor="@color/primaryColor"
-                    android:layout_gravity="center"
-                    android:textSize="25dp"/>
-
-                <TextView
-                    android:id="@+id/txtLatitude2"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:text="Latitude"
-                    android:layout_marginLeft="37dp"
-                    android:textColor="@color/primaryColor"
-                    android:layout_marginBottom="10dp"
-                    android:textSize="15dp"
-                    android:layout_gravity="center"/>
-
-                <TextView
-                    android:id="@+id/txtLongitude2"
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:text="Longitude"
-                    android:layout_marginLeft="37dp"
-                    android:layout_marginBottom="-10dp"
-                    android:textColor="@color/primaryColor"
-                    android:textSize="15dp"
-                    android:layout_gravity="center"/>
-
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewSensores"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="42dp" />
+            </LinearLayout>
 
             </FrameLayout>
 
-        </FrameLayout>
+
         <FrameLayout
             android:layout_width="300dp"
             android:layout_height="300dp"
@@ -240,8 +102,6 @@
             android:hint="Longitude"
             android:textAlignment="center"
             android:inputType="text"
-            android:digits="23,23231455566"
-
             android:textColor="@color/black" />
 
         <EditText

@@ -1,5 +1,6 @@
 package com.example.projetojuquery
 
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,11 +10,13 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import bdConnect
 
 
 class SensorFragment : Fragment() {
-    
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -23,7 +26,10 @@ class SensorFragment : Fragment() {
 
 
     }
-
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var sensorAdapter: SensorViewAdapter
+    private lateinit var sensores: MutableList<bdConnect.Sensor>
+    private lateinit var bdSensor: bdConnect
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -32,6 +38,17 @@ class SensorFragment : Fragment() {
         val btnCadastrar = view.findViewById<Button>(R.id.btnCadastrarSensor)
 
 
+
+        // Initialize RecyclerView
+        recyclerView = view.findViewById(R.id.recyclerViewSensores)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        // Initialize data
+        sensores = bdSensor.listarSensores().toMutableList()
+
+        // Initialize adapter
+        sensorAdapter = SensorViewAdapter(requireContext(), sensores)
+        recyclerView.adapter = sensorAdapter
 
 
         btnCadastrar.setOnClickListener {
@@ -50,19 +67,6 @@ class SensorFragment : Fragment() {
                 ).show()
 
             }
-        }
-
-        val txtIdSensor0 = view.findViewById<TextView>(R.id.txtIdSensor)
-        val txtIdSensor1 = view.findViewById<TextView>(R.id.txtIdSensor1)
-        val txtIdSensor2 = view.findViewById<TextView>(R.id.txtIdSensor2)
-        val txtLatitude0 = view.findViewById<TextView>(R.id.txtLatitude)
-        val txtLatitude1 = view.findViewById<TextView>(R.id.txtLatitude1)
-        val txtLatitude2 = view.findViewById<TextView>(R.id.txtLatitude2)
-        val txtLongitude0 = view.findViewById<TextView>(R.id.txtLongitude)
-        val txtLongitude1 = view.findViewById<TextView>(R.id.txtLongitude1)
-        val txtLongitude2 = view.findViewById<TextView>(R.id.txtLongitude2)
-
-
 
 
 
@@ -70,4 +74,5 @@ class SensorFragment : Fragment() {
 
 
 
+}
 }

@@ -168,6 +168,22 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
         cursor.close()
         return sensores
     }
+    fun listarSensores(): List<Sensor> {
+        val sensores = mutableListOf<Sensor>()
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("SELECT * FROM sensors_table", null) // Assuming your table name is 'sensors_table'
+
+        if (cursor.moveToFirst()) {
+            do {
+                val id = cursor.getInt(cursor.getColumnIndexOrThrow("id"))
+                val latitude = cursor.getString(cursor.getColumnIndexOrThrow("latitude"))
+                val longitude = cursor.getString(cursor.getColumnIndexOrThrow("longitude"))
+                sensores.add(Sensor(id, latitude, longitude))
+            } while (cursor.moveToNext())
+        }
+        cursor.close()
+        return sensores
+    }
     data class Sensor(
         val id: Int,
         var latitude: String,
