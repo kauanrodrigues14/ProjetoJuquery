@@ -17,6 +17,7 @@
     <item
         android:id="@+id/Clima"
         android:enabled="true"
+        android:state_checked="true"
         android:icon="@drawable/clima"
 
         android:title="Clima" />
