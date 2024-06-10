@@ -46,8 +46,6 @@ class BombeiroAdapter(
 
 
         holder.btnEditar.setOnClickListener {
-            // Abrir diálogo para atualizar dados
-
             val dialogView = LayoutInflater.from(context).inflate(R.layout.dialog, null)
             val edtNome = dialogView.findViewById<EditText>(R.id.edtAttNome)
             val btnAtualizar = dialogView.findViewById<Button>(R.id.btnAtualizar)
@@ -81,11 +79,9 @@ class BombeiroAdapter(
 
         }
         holder.btnDeletar.setOnClickListener {
-
             val dialog = LayoutInflater.from(context).inflate(R.layout.dialog_delete, null)
             val btnCancelar = dialog.findViewById<ImageButton>(R.id.btnCancelar)
             val btnConfirmar = dialog.findViewById<ImageButton>(R.id.btnConfirmar)
-
             val dialogAlerta = AlertDialog.Builder(context, R.style.CustomAlertDialog)
                 .setView(dialog)
                 .create()

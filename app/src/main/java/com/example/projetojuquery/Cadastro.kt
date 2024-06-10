@@ -41,14 +41,13 @@ class Cadastro : AppCompatActivity() {
                 val proxLinha =
                     bdCad.cadastroBombeiro(edtNome, edtCPF, edtLogin, edtCargo, edtSenha)
 
-
                 if (proxLinha != -1L) {
                     Toast.makeText(
                         this,
                         "Bombeiro Cadastrado com sucesso!!",
                         Toast.LENGTH_SHORT
                     ).show()
-                    val intent = Intent(this, MainActivity::class.java)
+                    val intent = Intent(this, LoginActivity::class.java)
                     startActivity(intent)
                 } else {
                     Toast.makeText(this, "Falha no Cadastro ", Toast.LENGTH_SHORT).show()

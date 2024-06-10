@@ -45,14 +45,16 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
         val INSERIR_SENSOR = ("INSERT INTO Sensor VALUES(\"1\",\"123123\",\"123123\")")
         bd.execSQL(INSERIR_SENSOR)
     }
+    override fun onUpgrade(bd: SQLiteDatabase, versaoAntiga: Int, novaVersao: Int) {
+        bd.execSQL("DROP TABLE IF EXISTS Bombeiro")
+        bd.execSQL("DROP TABLE IF EXISTS Sensor")
+        bd.execSQL("DROP TABLE IF EXISTS Alerta")
+        onCreate(bd)
 
-    fun cadastroBombeiro(
-        nome: String,
-        cpf: String,
-        login: String,
-        cargo: String,
-        senha: String
-    ): Long {
+
+    }
+
+    fun cadastroBombeiro(nome: String, cpf: String, login: String, cargo: String, senha: String): Long {
         val bd = this.writableDatabase
 
         val valores = ContentValues().apply {
@@ -64,8 +66,6 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
         }
         return bd.insert("Bombeiro", null, valores)
     }
-
-
     fun pegarDadosBombeiro(): List<Bombeiro> {
         val bd = this.readableDatabase
         val cursor = bd.rawQuery("SELECT * FROM Bombeiro", null)
@@ -89,7 +89,6 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
 
         return bombeiros
     }
-
     fun atualizarBombeiro(id: Int, nome: String, cargo: String): Int {
         val bd = this.writableDatabase
 
@@ -105,30 +104,14 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
         val bd = this.writableDatabase
         return bd.delete("Bombeiro", "idbombeiro= ?", arrayOf(id.toString()))
     }
-
-    data class Bombeiro(val id: Int, var nome: String, val cpf: String, val login: String, var cargo: String)
-
-
-
-    fun autenticarUsuario(login: String, senha: String): Boolean {
-        val bd = this.writableDatabase
-
-        val cursor = bd.rawQuery(
-            "SELECT * FROM Bombeiro WHERE login = ? AND senha = ?",
-            arrayOf(login, senha)
-        )
+    data class Bombeiro(
+        val id: Int,
+        var nome: String,
+        val cpf: String,
+        val login: String,
+        var cargo: String)
 
 
-        val usuarioExiste = cursor.count > 0
-
-
-
-        cursor.close()
-
-        return usuarioExiste
-
-
-    }
 
     fun cadastrarSensor(latitude: String, longitude: String): Long {
         val bd = this.writableDatabase
@@ -177,21 +160,29 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
         var latitude: String,
         var longitude: String
     )
+    fun autenticarUsuario(login: String, senha: String): Boolean {
+        val bd = this.writableDatabase
+
+        val cursor = bd.rawQuery(
+            "SELECT * FROM Bombeiro WHERE login = ? AND senha = ?",
+            arrayOf(login, senha)
+        )
+
+
+        val usuarioExiste = cursor.count > 0
 
 
 
+        cursor.close()
 
-
-
-
-    override fun onUpgrade(bd: SQLiteDatabase, versaoAntiga: Int, novaVersao: Int) {
-        bd.execSQL("DROP TABLE IF EXISTS Bombeiro")
-        bd.execSQL("DROP TABLE IF EXISTS Sensor")
-        bd.execSQL("DROP TABLE IF EXISTS Alerta")
-        onCreate(bd)
+        return usuarioExiste
 
 
     }
+
+
+
+
 
 
 }

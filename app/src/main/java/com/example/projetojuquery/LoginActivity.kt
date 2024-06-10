@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -53,7 +53,6 @@ class MainActivity : AppCompatActivity() {
 
                 if (autenticado) {
                     Toast.makeText(this, "Login bem-sucedido!", Toast.LENGTH_SHORT).show()
-                    // Navegue para a próxima Activity aqui
                     val intent = Intent(this, PaginaInicial::class.java)
                     startActivity(intent)
                 } else {

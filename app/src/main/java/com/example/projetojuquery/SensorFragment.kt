@@ -23,11 +23,10 @@ class SensorFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_sensor, container, false)
-
-
     }
+
+
     private lateinit var recyclerView: RecyclerView
     private lateinit var sensorViewAdapter: SensorViewAdapter
     private lateinit var sensorList: List<bdConnect.Sensor>

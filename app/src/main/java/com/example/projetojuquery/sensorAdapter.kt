@@ -37,7 +37,6 @@ class SensorAdapter(
         holder.longitude.text = currentSensor.longitude
 
         holder.btnEditar.setOnClickListener {
-            // Abrir diálogo para atualizar dados
             val dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_sensor, null)
             val edtLatitude = dialogView.findViewById<EditText>(R.id.edtLatitudeAtualizar)
             val edtLongitude = dialogView.findViewById<EditText>(R.id.edtLongitudeAtualizar)
@@ -56,7 +55,7 @@ class SensorAdapter(
 
                 if (novaLatitude.isNotEmpty() && novaLongitude.isNotEmpty()) {
                     bd.atualizarSensor(currentSensor.id, novaLatitude, novaLongitude)
-                    // Atualizar a lista localmente
+                    // Atualizar a lista l
                     currentSensor.latitude = novaLatitude
                     currentSensor.longitude = novaLongitude
                     notifyItemChanged(position)

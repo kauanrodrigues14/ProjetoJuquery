@@ -9,9 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 class SensorViewAdapter(private val sensorList: List<bdConnect.Sensor>) : RecyclerView.Adapter<SensorViewAdapter.SensorViewHolder>() {
 
     class SensorViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val idTextView: TextView = itemView.findViewById(R.id.txtIdView)
-        val latitudeTextView: TextView = itemView.findViewById(R.id.txtLatitudeView)
-        val longitudeTextView: TextView = itemView.findViewById(R.id.txtLongitudeView)
+        val txtIdView: TextView = itemView.findViewById(R.id.txtIdView)
+        val txtLatitudeView: TextView = itemView.findViewById(R.id.txtLatitudeView)
+        val txtLongitudeView: TextView = itemView.findViewById(R.id.txtLongitudeView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SensorViewHolder {
@@ -21,9 +21,9 @@ class SensorViewAdapter(private val sensorList: List<bdConnect.Sensor>) : Recycl
 
     override fun onBindViewHolder(holder: SensorViewHolder, position: Int) {
         val currentSensor = sensorList[position]
-        holder.idTextView.text = currentSensor.id.toString()
-        holder.latitudeTextView.text = currentSensor.latitude
-        holder.longitudeTextView.text = currentSensor.longitude
+        holder.txtIdView.text = currentSensor.id.toString()
+        holder.txtLatitudeView.text = currentSensor.latitude
+        holder.txtLongitudeView.text = currentSensor.longitude
     }
 
     override fun getItemCount() = sensorList.size
