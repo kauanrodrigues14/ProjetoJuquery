@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import bdConnect
 
 class SensorViewAdapter(private val sensorList: List<bdConnect.Sensor>) : RecyclerView.Adapter<SensorViewAdapter.SensorViewHolder>() {
 

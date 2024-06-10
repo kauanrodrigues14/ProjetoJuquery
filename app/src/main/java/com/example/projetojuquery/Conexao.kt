@@ -1,4 +1,4 @@
-
+package com.example.projetojuquery
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper
 class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE_DADOS, null, VERSAO_DO_BANCO_DE_DADOS) {
 
     companion object {
-        private const val VERSAO_DO_BANCO_DE_DADOS = 2
+        private const val VERSAO_DO_BANCO_DE_DADOS = 3
         private const val NOME_DO_BANCO_DE_DADOS = "projetojuquery.db"
     }
 
@@ -31,7 +31,7 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
                 "datahora DATETIME," +
                 "temperatura INTEGER," +
                 "umidade INTEGER," +
-                "vento INTEGER," +
+                "fogo INTEGER," +
                 "FOREIGN KEY (fk_idsensor) REFERENCES Sensor(idsensor))")
 
         bd.execSQL(CRIAR_TABELA_BOMBEIRO)
@@ -41,6 +41,9 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
         val INSERIR_BOMBEIRO =
             ("INSERT INTO Bombeiro VALUES(\"1\",\"kauan\",\"21312312312\",\"kauan\",\"kauan\",\"kauan\")")
         bd.execSQL(INSERIR_BOMBEIRO)
+
+        val INSERIR_SENSOR = ("INSERT INTO Sensor VALUES(\"1\",\"123123\",\"123123\")")
+        bd.execSQL(INSERIR_SENSOR)
     }
 
     fun cadastroBombeiro(

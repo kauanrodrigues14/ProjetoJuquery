@@ -10,29 +10,19 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingBottom="150dp">
 
-        <FrameLayout
+        <com.mapbox.maps.MapView
+            android:id="@+id/mapView"
             android:layout_width="350dp"
             android:layout_height="300dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="105dp"
-            android:layout_marginRight="20dp">
-
-            <FrameLayout
-                android:id="@+id/mapView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:mapbox_cameraTargetLat="39.5"
-                app:mapbox_cameraTargetLng="-98.0"
-                app:mapbox_cameraZoom="2.0"
-                app:mapbox_cameraPitch="0.0"
-                app:mapbox_cameraBearing="0.0" />
+            android:layout_marginRight="20dp"/>
 
 
-        </FrameLayout>
 
         <LinearLayout
 

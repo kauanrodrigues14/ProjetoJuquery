@@ -5,4 +5,7 @@
     <color name="colorAccent">#FFFFFFFF</color>
     <color name="primaryColor">#1A4D2E</color>
     <color name="corFundo">#BDE8DFCA</color>
+    <color name="Vermelho">#FF0000</color>
+    <color name="VerdeLima">#32CD32</color>
+
 </resources>

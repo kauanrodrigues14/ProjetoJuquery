@@ -11,7 +11,10 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import bdConnect
+import com.mapbox.geojson.Point
+import com.mapbox.maps.CameraOptions
+import com.mapbox.maps.MapView
+import com.mapbox.maps.Style
 
 
 class SensorFragment : Fragment() {
@@ -28,6 +31,7 @@ class SensorFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var sensorViewAdapter: SensorViewAdapter
     private lateinit var sensorList: List<bdConnect.Sensor>
+    private lateinit var mapView: MapView
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -46,6 +50,17 @@ class SensorFragment : Fragment() {
 
         sensorViewAdapter = SensorViewAdapter(sensorList)
         recyclerView.adapter = sensorViewAdapter
+
+        mapView = view.findViewById(R.id.mapView)
+        mapView.mapboxMap.loadStyle(Style.OUTDOORS) {
+            // Definir a localização inicial e o nível de zoom
+            val initialPosition = CameraOptions.Builder()
+                .center(Point.fromLngLat( -46.692587, -23.350546)) // Coordenadas o
+                .zoom(12.0)
+                .build()
+            mapView.mapboxMap.setCamera(initialPosition)
+        }
+
 
 
 
@@ -73,4 +88,5 @@ class SensorFragment : Fragment() {
 
 
 }
+
 }

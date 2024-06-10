@@ -8,7 +8,6 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import bdConnect
 
 class Cadastro : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
