@@ -15,6 +15,7 @@ class AdmInicial : AppCompatActivity() {
 
         val btnBombeiros = findViewById<Button>(R.id.btnBombeiros)
         val btnSensores = findViewById<Button>(R.id.btnSensores)
+        val btnAlertas = findViewById<Button>(R.id.btnAlertas)
 
 
         btnBombeiros.setOnClickListener {
@@ -25,6 +26,12 @@ class AdmInicial : AppCompatActivity() {
             val intent = Intent(this, DadosSensor::class.java)
             startActivity(intent)
         }
+        btnAlertas.setOnClickListener {
+            val intent = Intent(this, DadosAlerta::class.java)
+            startActivity(intent)
+
+        }
+
     }
 }
 

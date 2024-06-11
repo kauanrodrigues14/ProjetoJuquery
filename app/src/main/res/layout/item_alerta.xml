@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:layout_marginTop="30dp"
-    android:background="@drawable/textbox_borda">
-
+    android:layout_height="60dp"
+    android:orientation="vertical"
+    android:layout_marginTop="30dp">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
     <TextView
         android:id="@+id/txtDataHora"
         android:layout_width="50dp"
@@ -37,6 +40,7 @@
             android:textStyle="bold"
             android:fontFamily="@font/carme"/>
         <TextView
+            android:id="@+id/txtFogo"
             android:layout_marginHorizontal="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -70,6 +74,7 @@
             android:textStyle="bold"
             android:fontFamily="@font/carme"/>
         <TextView
+            android:id="@+id/txtTemperatura"
             android:layout_marginHorizontal="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -98,6 +103,7 @@
             android:textStyle="bold"
             android:fontFamily="@font/carme"/>
         <TextView
+            android:id="@+id/txtUmidadeAlerta"
             android:layout_marginHorizontal="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -112,5 +118,14 @@
 
 
 
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="200dp"
+        android:layout_height="3dp"
+        android:background="@color/primaryColor"
+        android:layout_gravity="center_horizontal"
+        />
 
 </LinearLayout>

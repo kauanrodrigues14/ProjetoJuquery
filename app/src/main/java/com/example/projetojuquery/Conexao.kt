@@ -160,6 +160,34 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
         var latitude: String,
         var longitude: String
     )
+
+    fun obterAlertas(): List<Alerta> {
+        val bd = this.readableDatabase
+        val cursor = bd.rawQuery("SELECT * FROM Alerta", null)
+        val alertas = mutableListOf<Alerta>()
+
+        if (cursor.moveToFirst()) {
+            do {
+                val id = cursor.getInt(cursor.getColumnIndexOrThrow("idalerta"))
+                val fk_idsensor = cursor.getInt(cursor.getColumnIndexOrThrow("fk_idsensor"))
+                val datahora = cursor.getString(cursor.getColumnIndexOrThrow("datahora"))
+                val temperatura = cursor.getInt(cursor.getColumnIndexOrThrow("temperatura"))
+                val umidade = cursor.getInt(cursor.getColumnIndexOrThrow("umidade"))
+                val fogo = cursor.getInt(cursor.getColumnIndexOrThrow("fogo"))
+
+            }while(cursor.moveToNext())
+
+        }
+        cursor.close()
+        return alertas
+    }
+    data class Alerta(
+        val id: Int,
+        var fk_idsensor: Int,
+        val datahora: String,
+        val temperatura: Int,
+        val umidade: Int,
+        val fogo: Int)
     fun autenticarUsuario(login: String, senha: String): Boolean {
         val bd = this.writableDatabase
 
