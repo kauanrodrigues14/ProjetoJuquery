@@ -21,31 +21,33 @@
                     />
 
 
-
-
+                <LinearLayout
+                    android:layout_marginTop="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
                 <TextView
                     android:id="@+id/txtLatitude"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:text="Latitude"
                     android:textSize="15dp"
                     android:textColor="@color/primaryColor"
                     android:fontFamily="@font/carme"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="40dp"
-                    android:layout_marginBottom="5dp"/>
+                    android:layout_marginLeft="15dp" />
 
                 <TextView
                     android:id="@+id/txtLongitude"
-                    android:layout_width="wrap_content"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:text="Longitude"
                     android:textSize="15dp"
                     android:textColor="@color/primaryColor"
                     android:fontFamily="@font/carme"
                     android:layout_marginLeft="15dp"
-                    android:layout_marginTop="60dp"
                     android:layout_marginBottom="10dp"/>
+
+                </LinearLayout>
                 <ImageButton
                     android:id="@+id/btnEditar"
                     android:layout_width="45dp"
@@ -60,13 +62,13 @@
                     android:background="@drawable/lixeira"
                     android:layout_gravity="center"
                     android:layout_marginRight="-100dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/primaryColor"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="15dp"/>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:background="@color/primaryColor"
-                    android:layout_gravity="bottom"
-                    android:layout_marginTop="15dp"/>
 
 
         </FrameLayout>

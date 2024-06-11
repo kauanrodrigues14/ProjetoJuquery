@@ -14,15 +14,36 @@
         android:orientation="vertical"
         android:paddingBottom="150dp">
 
+        <FrameLayout
+            android:layout_marginTop="50dp"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:layout_gravity="center"
+            android:background="@drawable/fundo_linearlayout">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/cadastro_fundo">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PARQUE DO JUQUERY"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/carme"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="20dp"
+                    android:textStyle="bold"/>
+            </FrameLayout>
+
         <com.mapbox.maps.MapView
             android:id="@+id/mapView"
-            android:layout_width="350dp"
-            android:layout_height="300dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="105dp"
-            android:layout_marginRight="20dp"/>
+            android:layout_marginTop="55dp"
+            android:layout_width="340dp"
+            android:layout_height="290dp"
+            android:layout_gravity="center_horizontal"/>
 
-
+        </FrameLayout>
 
         <LinearLayout
 
@@ -89,7 +110,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="-25dp"
             android:background="@drawable/textbox_borda"
-            android:ems="10"
+            android:maxLength="9"
             android:fontFamily="@font/carme"
             android:hint="Longitude"
             android:textAlignment="center"
@@ -103,8 +124,8 @@
             android:layout_gravity="center"
             android:layout_marginTop="25dp"
             android:background="@drawable/textbox_borda"
-            android:ems="10"
             android:fontFamily="@font/carme"
+            android:maxLength="9"
             android:hint="Latitude"
             android:inputType="text"
             android:textAlignment="center"

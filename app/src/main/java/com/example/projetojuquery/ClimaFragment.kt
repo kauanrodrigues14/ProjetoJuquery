@@ -99,7 +99,6 @@ class ClimaFragment : Fragment() {
         val txtTemp = view.findViewById<TextView>(R.id.txtTemp)
         val txtUmidade = view.findViewById<TextView>(R.id.txtUmidade)
         val txtVento = view.findViewById<TextView>(R.id.txtVento)
-        val txtChuva = view.findViewById<TextView>(R.id.txtChuva)
         val txtData = view.findViewById<TextView>(R.id.txtData)
         val txtTempmax = view.findViewById<TextView>(R.id.txtTempmax)
         val txtTempmin = view.findViewById<TextView>(R.id.txtTempmin)
@@ -138,8 +137,6 @@ class ClimaFragment : Fragment() {
                     val tempmin = dadosClima?.main?.temp_min ?: 0.0
                     val umidade = dadosClima?.main?.humidity ?: 0
                     val vento = (dadosClima?.wind?.speed ?: 0.0) * 3.6 // Convertendo de m/s para km/h
-                    val precipitationProbability = dadosClima?.pop ?: 0.0
-                    val chanceChuva = (precipitationProbability * 100).toInt()
                     val timestamp = dadosClima?.dt ?: 0L
                     val dataFormatada = formatarData(timestamp)
 
@@ -163,7 +160,6 @@ class ClimaFragment : Fragment() {
                         txtTempmin.text = "${tempmin.toInt()}°"
                         txtUmidade.text = "${umidade}%"
                         txtVento.text = "${vento.toInt()} Km/h"
-                        txtChuva.text = "${chanceChuva}%"
                         txtData.text = dataFormatada + " - Hoje"
 
                         // Atualizando previsões

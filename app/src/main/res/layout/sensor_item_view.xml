@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="300dp"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 <LinearLayout
@@ -28,7 +28,7 @@
 
     <TextView
         android:id="@+id/txtLatitudeView"
-        android:layout_width="120dp"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:text="Latitude"
@@ -45,7 +45,7 @@
 
     <TextView
         android:id="@+id/txtLongitudeView"
-        android:layout_width="120dp"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textColor="@color/primaryColor"

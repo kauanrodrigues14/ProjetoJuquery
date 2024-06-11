@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper
 class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE_DADOS, null, VERSAO_DO_BANCO_DE_DADOS) {
 
     companion object {
-        private const val VERSAO_DO_BANCO_DE_DADOS = 3
+        private const val VERSAO_DO_BANCO_DE_DADOS = 4
         private const val NOME_DO_BANCO_DE_DADOS = "projetojuquery.db"
     }
 
@@ -16,7 +16,7 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
                 "idbombeiro INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "nome VARCHAR(50)," +
                 "cpf CHAR(11)," +
-                "login VARCHAR(7)," +
+                "login VARCHAR(15)," +
                 "cargo VARCHAR(15)," +
                 "senha VARCHAR(15))")
 

@@ -99,7 +99,7 @@ class BombeiroAdapter(
                 dialogAlerta.dismiss()
             }
             dialogAlerta.show()
-            dialogAlerta.window?.setLayout(600, 600)
+            dialogAlerta.window?.setLayout(800, 600)
 
 
 

@@ -88,7 +88,7 @@
             android:layout_marginEnd="28.5dp"
             android:layout_marginBottom="250dp"
             android:background="@drawable/textbox_borda"
-            android:ems="10"
+            android:maxLength="15"
             android:fontFamily="@font/carme"
             android:gravity="center"
             android:hint="Login"

@@ -104,7 +104,7 @@
             android:layout_height="93dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="53dp"
             android:layout_marginBottom="21dp"
             android:background="@drawable/fundo_frame">
 
@@ -115,17 +115,17 @@
                 android:layout_marginBottom="15dp"
                 android:src="@drawable/umidade" />
 
-                <TextView
-                    android:id="@+id/txtUmidade"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:textSize="20sp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="25dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/primaryColor"
-                    android:fontFamily="@font/carme"/>
+            <TextView
+                android:id="@+id/txtUmidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/carme"
+                android:text=""
+                android:textColor="@color/primaryColor"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
         </FrameLayout>
 
@@ -133,13 +133,12 @@
             android:id="@+id/ventoContainer"
             android:layout_width="84dp"
             android:layout_height="92dp"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="26dp"
-            android:layout_marginEnd="27dp"
-            android:layout_marginBottom="22dp"
-            android:layout_toStartOf="@+id/chuvaContainer"
-            android:layout_toEndOf="@+id/umidadeContainer"
+            android:layout_marginEnd="49dp"
+            android:layout_marginBottom="21dp"
             android:background="@drawable/fundo_frame">
+
             <ImageView
                 android:layout_width="70dp"
                 android:layout_height="60dp"
@@ -151,43 +150,14 @@
                 android:id="@+id/txtVento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="20sp"
                 android:layout_gravity="center"
                 android:layout_marginTop="25dp"
-                android:textStyle="bold"
+                android:fontFamily="@font/carme"
+                android:text=""
                 android:textColor="@color/primaryColor"
-                android:fontFamily="@font/carme"/>
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-        </FrameLayout>
-        <FrameLayout
-            android:id="@+id/chuvaContainer"
-            android:layout_width="84dp"
-            android:layout_height="92dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="224dp"
-            android:layout_marginEnd="19dp"
-            android:layout_marginBottom="21dp"
-            android:background="@drawable/fundo_frame">
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="15dp"
-                android:src="@drawable/chuva" />
-            <TextView
-                android:id="@+id/txtChuva"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="20sp"
-                android:layout_gravity="center"
-                android:layout_marginTop="25dp"
-                android:textStyle="bold"
-                android:textColor="@color/primaryColor"
-                android:fontFamily="@font/carme"/>
         </FrameLayout>
 
     </RelativeLayout>

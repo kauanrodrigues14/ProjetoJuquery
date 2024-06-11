@@ -42,8 +42,8 @@ class SensorAdapter(
             val edtLongitude = dialogView.findViewById<EditText>(R.id.edtLongitudeAtualizar)
             val btnAtualizar = dialogView.findViewById<Button>(R.id.btnAtualizar)
 
-            edtLatitude.setText(currentSensor.latitude)
-            edtLongitude.setText(currentSensor.longitude)
+             edtLatitude.setText( currentSensor.latitude)
+             edtLongitude.setText( currentSensor.longitude)
 
             val alertDialog = android.app.AlertDialog.Builder(context, R.style.CustomAlertDialog)
                 .setView(dialogView)
