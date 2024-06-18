@@ -3,7 +3,7 @@
     <style name="Base.Theme.ProjetoJuquery" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <item name="colorPrimary">@color/black</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/primaryColor</item>
         <item name="android:statusBarColor" tools:targetApi="1">@color/corFundo</item>
         <item name="android:navigationBarColor" tools:targetApi="1">@color/corFundo</item>
         <item name="android:textColorHint">@color/primaryColor</item>
