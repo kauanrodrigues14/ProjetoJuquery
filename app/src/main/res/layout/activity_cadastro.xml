@@ -23,8 +23,8 @@
 
         <EditText
             android:id="@+id/edtNome"
-            android:layout_width="292dp"
-            android:layout_height="40dp"
+            android:layout_width="290dp"
+            android:layout_height="45dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
@@ -41,8 +41,8 @@
 
         <EditText
             android:id="@+id/edtCPF"
-            android:layout_width="292dp"
-            android:layout_height="40dp"
+            android:layout_width="290dp"
+            android:layout_height="45dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
@@ -60,8 +60,8 @@
 
         <EditText
             android:id="@+id/edtCargo"
-            android:layout_width="292dp"
-            android:layout_height="40dp"
+            android:layout_width="290dp"
+            android:layout_height="45dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
@@ -79,8 +79,8 @@
 
         <EditText
             android:id="@+id/edtLoginCad"
-            android:layout_width="292dp"
-            android:layout_height="40dp"
+            android:layout_width="290dp"
+            android:layout_height="45dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
@@ -97,8 +97,8 @@
 
         <EditText
             android:id="@+id/edtSenhaCad"
-            android:layout_width="292dp"
-            android:layout_height="40dp"
+            android:layout_width="290dp"
+            android:layout_height="45dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
@@ -116,7 +116,7 @@
         <Button
             android:id="@+id/btnCadastrar"
             android:layout_width="wrap_content"
-            android:layout_height="46dp"
+            android:layout_height="60dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
