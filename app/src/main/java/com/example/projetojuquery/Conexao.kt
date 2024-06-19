@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper
 class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE_DADOS, null, VERSAO_DO_BANCO_DE_DADOS) {
 
     companion object {
-        private const val VERSAO_DO_BANCO_DE_DADOS = 4
+        private const val VERSAO_DO_BANCO_DE_DADOS = 6
         private const val NOME_DO_BANCO_DE_DADOS = "projetojuquery.db"
     }
 
@@ -39,11 +39,9 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
         bd.execSQL(CRIAR_TABELA_ALERTA)
 
         val INSERIR_BOMBEIRO =
-            ("INSERT INTO Bombeiro VALUES(\"1\",\"kauan\",\"21312312312\",\"kauan\",\"kauan\",\"kauan\")")
+            ("INSERT INTO Bombeiro VALUES(\"1\",\"Bombeiro\",\"21312312312\",\"bombeiro\",\"Bombeiro\",\"bombeiro\")")
         bd.execSQL(INSERIR_BOMBEIRO)
 
-        val INSERIR_SENSOR = ("INSERT INTO Sensor VALUES(\"1\",\"123123\",\"123123\")")
-        bd.execSQL(INSERIR_SENSOR)
     }
     override fun onUpgrade(bd: SQLiteDatabase, versaoAntiga: Int, novaVersao: Int) {
         bd.execSQL("DROP TABLE IF EXISTS Bombeiro")
