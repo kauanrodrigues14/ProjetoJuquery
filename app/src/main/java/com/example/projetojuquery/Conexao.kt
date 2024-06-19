@@ -161,6 +161,7 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
         var longitude: String
     )
 
+
     fun obterAlertas(): List<Alerta> {
         val bd = this.readableDatabase
         val cursor = bd.rawQuery("SELECT * FROM Alerta", null)
@@ -207,10 +208,4 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
 
 
     }
-
-
-
-
-
-
 }
