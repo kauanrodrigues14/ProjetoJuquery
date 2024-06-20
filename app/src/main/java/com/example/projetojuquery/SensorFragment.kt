@@ -52,7 +52,6 @@ class SensorFragment : Fragment() {
 
         mapView = view.findViewById(R.id.mapView)
         mapView.mapboxMap.loadStyle(Style.OUTDOORS) {
-            // Definir a localização inicial e o nível de zoom
             val initialPosition = CameraOptions.Builder()
                 .center(Point.fromLngLat( -46.702448, -23.349262)) // Coordenadas o
                 .zoom(11.5)

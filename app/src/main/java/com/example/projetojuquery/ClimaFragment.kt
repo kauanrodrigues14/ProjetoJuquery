@@ -26,13 +26,13 @@ class ClimaFragment : Fragment() {
     private val BASE_URL = "https://api.openweathermap.org/data/2.5/"
     private val API_KEY = "c224f8efb78a9df1bc94e936cf9069a7"
 
-    // Inicializando o Retrofit
+
     private val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    // Interface para definir os pontos finais da API
+
     private interface ClimaApi {
         @GET("weather")
         suspend fun getClima(
@@ -49,7 +49,7 @@ class ClimaFragment : Fragment() {
         ): Response<PrevisaoResultado>
     }
 
-    // Classe de modelo para representar a resposta JSON do clima atual
+
     data class ClimaResultado(
         val main: Principal,
         val weather: List<Clima>,
@@ -73,7 +73,6 @@ class ClimaFragment : Fragment() {
         val speed: Double
     )
 
-    // Classe de modelo para representar a resposta JSON da previsão
     data class PrevisaoResultado(
         val list: List<PrevisaoItem>
     )
@@ -103,7 +102,7 @@ class ClimaFragment : Fragment() {
         val txtTempmax = view.findViewById<TextView>(R.id.txtTempmax)
         val txtTempmin = view.findViewById<TextView>(R.id.txtTempmin)
 
-        // Previsão dos próximos dias
+        // Previsão
         val txtTempmin1 = view.findViewById<TextView>(R.id.txtTempmin1)
         val txtTempmax1 = view.findViewById<TextView>(R.id.txtTempmax1)
         val txtData1 = view.findViewById<TextView>(R.id.txtData1)
@@ -124,14 +123,13 @@ class ClimaFragment : Fragment() {
                 // Chamada para clima atual
                 val respostaClima = climaApi.getClima("Francisco Morato", API_KEY)
 
-                // Chamada para previsão
                 val respostaPrevisao = climaApi.getPrevisao("Francisco Morato", API_KEY)
 
                 if (respostaClima.isSuccessful && respostaPrevisao.isSuccessful) {
                     val dadosClima = respostaClima.body()
                     val dadosPrevisao = respostaPrevisao.body()?.list ?: emptyList()
 
-                    // Processar dados do clima atual
+
                     val temperatura = dadosClima?.main?.temp ?: 0.0
                     val tempmax = dadosClima?.main?.temp_max ?: 0.0
                     val tempmin = dadosClima?.main?.temp_min ?: 0.0
