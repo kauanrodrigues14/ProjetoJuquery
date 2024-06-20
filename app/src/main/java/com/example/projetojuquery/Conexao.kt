@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper
 class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE_DADOS, null, VERSAO_DO_BANCO_DE_DADOS) {
 
     companion object {
-        private const val VERSAO_DO_BANCO_DE_DADOS = 6
+        private const val VERSAO_DO_BANCO_DE_DADOS = 8
         private const val NOME_DO_BANCO_DE_DADOS = "projetojuquery.db"
     }
 
@@ -39,7 +39,7 @@ class bdConnect(contexto: Context) : SQLiteOpenHelper(contexto, NOME_DO_BANCO_DE
         bd.execSQL(CRIAR_TABELA_ALERTA)
 
         val INSERIR_BOMBEIRO =
-            ("INSERT INTO Bombeiro VALUES(\"1\",\"Bombeiro\",\"21312312312\",\"bombeiro\",\"Bombeiro\",\"bombeiro\")")
+            ("INSERT INTO Bombeiro VALUES(\"1\",\"Bombeiro\",\"21312312312\",\"projeto\",\"Bombeiro\",\"juquery\")")
         bd.execSQL(INSERIR_BOMBEIRO)
 
     }
