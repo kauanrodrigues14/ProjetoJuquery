@@ -9,7 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import com.mapbox.maps.BuildConfig
+
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
@@ -25,8 +25,7 @@ import java.util.Locale
 class ClimaFragment : Fragment() {
 
     private val BASE_URL = "https://api.openweathermap.org/data/2.5/"
-     val API_KEY = "2312312321"
-
+     val API_KEY = com.example.projetojuquery.BuildConfig.API_KEY
 
     private val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
