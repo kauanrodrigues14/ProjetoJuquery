@@ -1,7 +1,14 @@
+import java.util.Properties
+import java.io.File
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
 }
+val localProperties = Properties().apply {
+    load(File(rootProject.projectDir, "local.properties").inputStream())
+}
+
 
 android {
     namespace = "com.example.projetojuquery"
@@ -14,7 +21,12 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        defaultConfig {
+            buildConfigField("String", "API_KEY", "\"${localProperties["API_KEY"]}\"")
+        }
+    }
+    buildFeatures {
+        buildConfig = true
     }
 
     buildTypes {
