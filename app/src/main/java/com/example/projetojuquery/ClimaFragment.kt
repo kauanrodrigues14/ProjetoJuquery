@@ -22,11 +22,10 @@ import java.util.Date
 import java.util.Locale
 
 
-
 class ClimaFragment : Fragment() {
 
     private val BASE_URL = "https://api.openweathermap.org/data/2.5/"
-   private val API_KEY = com.example.projetojuquery.BuildConfig.API_KEY
+     val API_KEY = "2312312321"
 
 
     private val retrofit = Retrofit.Builder()
