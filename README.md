@@ -3,7 +3,7 @@
 O Projeto Juquery, é um software de monitoramento e gerenciamento de sensores anti-chamas, com prpósito de 
 previnir e evitar queimadas florestais.
 
-🚀 ## Principais Funcionalidades
+## A second-level heading🚀Principais Funcionalidades
 
 • CRUD de Usúarios e Sensores
 • Informações do tempo e clima local
